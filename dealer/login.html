@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+  <title>KnowMyTow - Dealer Login</title>
+  <link rel="shortcut icon" href="../assets/favicon.png" type="image/x-icon">
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <link href="https://fonts.googleapis.com" rel="preconnect" />
+  <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&amp;display=swap" rel="stylesheet" />
+  <script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "primary": "#66cd4f",
+            "background-light": "#f6f8f6",
+            "background-dark": "#142111",
+          },
+          fontFamily: {
+            "display": ["Inter"]
+          },
+          borderRadius: {
+            "DEFAULT": "0.5rem",
+            "lg": "1rem",
+            "xl": "1.5rem",
+            "full": "9999px"
+          },
+        },
+      },
+    }
+  </script>
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+    }
+  </style>
+</head>
+
+<body class="bg-background-light dark:bg-background-dark font-display text-gray-800 dark:text-gray-200">
+  <div class="flex flex-col min-h-screen">
+    <main class="flex flex-1 items-center justify-center py-12 px-4">
+      <div class="w-full max-w-md space-y-8">
+        <div class="text-center">
+          <div class="mb-4 flex justify-center">
+            <img src="../assets/hyundai.png" class="h-32" alt="Know My Tow">
+          </div>
+          <h2 class="text-3xl font-bold tracking-tight text-gray-900 dark:text-white">Dealer Login</h2>
+          <p class="mt-2 text-sm text-gray-600 dark:text-gray-400">
+            Welcome back! Please enter your credentials.
+          </p>
+        </div>
+        <form id="loginForm"
+          class="space-y-6 bg-white dark:bg-gray-900/50 p-8 rounded-xl shadow-sm border border-gray-200 dark:border-gray-700">
+          <div>
+            <label class="block text-sm font-medium text-gray-700 dark:text-gray-300" for="email">Email address</label>
+            <div class="mt-1">
+              <input autocomplete="email"
+                class="form-input w-full rounded-lg border-gray-300 dark:border-gray-600 bg-background-light dark:bg-background-dark focus:border-primary focus:ring-primary text-gray-900 dark:text-white placeholder-gray-400 dark:placeholder-gray-500"
+                id="email" name="email" type="email" />
+            </div>
+          </div>
+          <div>
+            <label class="block text-sm font-medium text-gray-700 dark:text-gray-300" for="password">Password</label>
+            <div class="mt-1">
+              <input autocomplete="current-password"
+                class="form-input w-full rounded-lg border-gray-300 dark:border-gray-600 bg-background-light dark:bg-background-dark focus:border-primary focus:ring-primary text-gray-900 dark:text-white placeholder-gray-400 dark:placeholder-gray-500"
+                id="password" name="password" type="password" />
+            </div>
+          </div>
+          <div class="flex items-center justify-between">
+            <div class="text-sm">
+              <a class="font-medium text-primary hover:text-primary/80" href="#">Forgot your password?</a>
+            </div>
+          </div>
+          <div>
+            <button
+              class="w-full flex justify-center py-3 px-4 border border-transparent rounded-lg shadow-sm text-sm font-bold text-white bg-primary hover:bg-primary/90 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary dark:focus:ring-offset-background-dark transition-colors"
+              type="submit">
+              Login
+            </button>
+          </div>
+        </form>
+        <p class="mt-6 text-center text-sm text-gray-500 dark:text-gray-400">
+          Don't have an account?
+          <a class="font-medium text-primary hover:text-primary/80" href="../index.html">Sign up</a>
+        </p>
+      </div>
+    </main>
+  </div>
+
+  <script>
+  document.getElementById("loginForm").addEventListener("submit", function (e) {
+    e.preventDefault();
+    const email = document.getElementById("email").value.trim();
+    const password = document.getElementById("password").value.trim();
+
+    if (email === "dealer@colakin.com" && password === "12345678") {
+      window.location.href = "dashboard.html";
+    } else {
+      alert("Invalid credentials! Please try again.");
+    }
+  });
+</script>
+
+</body>
+
+</html>

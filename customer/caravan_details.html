@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Know My Tow - Caravan Details</title>
+    <link rel="shortcut icon" href="../assets/favicon.png" type="image/x-icon">
+    <script src="https://cdn.tailwindcss.com?plugins=container-queries"></script>
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;700;800&amp;display=swap"
+        rel="stylesheet" />
+    <script>tailwind.config = { darkMode: "class", theme: { extend: { colors: { primary: "#66cd4f", "background-light": "#f6f8f6", "background-dark": "#152111" }, fontFamily: { display: "Plus Jakarta Sans" }, borderRadius: { DEFAULT: "0.5rem", lg: "1rem", xl: "1.5rem", full: "9999px" } } } };</script>
+    <style>
+        body {
+            font-family: "Plus Jakarta Sans", sans-serif;
+        }
+    </style>
+</head>
+
+<body class="bg-background-light dark:bg-background-dark">
+    <div class="relative flex min-h-screen w-full flex-col font-display text-stone-800 dark:text-stone-200">
+        <header
+            class="sticky top-0 z-10 bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-sm border-b border-zinc-200 dark:border-zinc-800">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="flex items-center justify-between h-16">
+                    <div class="flex items-center gap-4">
+                        <img class="w-32 h-auto" src="../assets/logo.png">
+                    </div>
+                    <div class="flex items-center gap-4">
+                        <button
+                            class="md:hidden p-2 rounded-full text-zinc-600 dark:text-zinc-400 hover:bg-zinc-200 dark:hover:bg-zinc-800">
+                            <span class="material-symbols-outlined">menu</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <main class="mx-auto w-full max-w-5xl flex-1 px-4 py-8 sm:px-6 lg:px-8">
+            <div class="flex flex-col gap-8">
+                <div class="text-sm text-stone-600 dark:text-stone-400">
+                    <a class="hover:text-primary" href="index.html">Caravans</a>
+                    <span class="mx-2">/</span>
+                    <span class="font-medium text-stone-800 dark:text-stone-200"> Jayco Journey</span>
+                </div>
+                <div class="grid grid-cols-1 gap-8 md:grid-cols-2 lg:gap-12">
+                    <div class="flex flex-col gap-4">
+                        <div class="relative h-96 w-full overflow-hidden rounded-xl">
+                            <div class="absolute inset-0 bg-cover bg-center"
+                                style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAWGPMzxevvefvnBg4K_zE8JhUpbpvdcQFjF-Ts7936Ipr_c9HkYX2Zz9q4Jtp5qrsljOpYVBmum6RaC03ZklewqSPhSXQ49B_1U53q4Qm2AVldnYfFsWWeeKnpa874mwXWn3cKJ6B4pB3gUld2KpYTCF4UctaoykMpWUD8FNBHh3ZOMl5i9mBlX3ILsAltW3fcfKPLe3pXMMzmXo7ZwZLkv8VF11-wQd6x3hpeucUkj1aZoiAocGBL3nc-BDhXLn1iUa75Zgiuh1s");'>
+                            </div>
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
+                            <div class="absolute bottom-4 left-1/2 flex -translate-x-1/2 gap-2">
+                                <div class="h-2 w-2 rounded-full bg-white"></div>
+                                <div class="h-2 w-2 rounded-full bg-white/50"></div>
+                                <div class="h-2 w-2 rounded-full bg-white/50"></div>
+                                <div class="h-2 w-2 rounded-full bg-white/50"></div>
+                            </div>
+                        </div>
+                        <div class="grid grid-cols-4 gap-2">
+                            <img alt="Caravan interior"
+                                class="h-24 w-full cursor-pointer rounded-lg object-cover ring-2 ring-primary"
+                                src="https://lh3.googleusercontent.com/aida-public/AB6AXuCAmMLjfMjYGo75rUivGF632W_oWN3kChuGfWqW6wO6RZ1tFqlxovIdwOo5zyCcD2E9IWr1mKhAEbXQODi9PD1inxPBRARkA-K8sZE03jsggyhLjDYCCSCCvdoS6XicaptPmbl3ZJrJRekwtzV1tLhIRp_h1MttDQhU2k1RbA1VNcpsmbFUzldXGvk5bFV71jRJ3IW35GyPr5W3rZM87lJB6e9GXjjqIHqprXA3KXunYRuceQhBDfc5SMrT5FRrsdP39EqAaD6tP2c" />
+                            <img alt="Caravan kitchen"
+                                class="h-24 w-full cursor-pointer rounded-lg object-cover opacity-70 transition-opacity hover:opacity-100"
+                                src="https://lh3.googleusercontent.com/aida-public/AB6AXuAWGPMzxevvefvnBg4K_zE8JhUpbpvdcQFjF-Ts7936Ipr_c9HkYX2Zz9q4Jtp5qrsljOpYVBmum6RaC03ZklewqSPhSXQ49B_1U53q4Qm2AVldnYfFsWWeeKnpa874mwXWn3cKJ6B4pB3gUld2KpYTCF4UctaoykMpWUD8FNBHh3ZOMl5i9mBlX3ILsAltW3fcfKPLe3pXMMzmXo7ZwZLkv8VF11-wQd6x3hpeucUkj1aZoiAocGBL3nc-BDhXLn1iUa75Zgiuh1s" />
+                            <img alt="Caravan bedroom"
+                                class="h-24 w-full cursor-pointer rounded-lg object-cover opacity-70 transition-opacity hover:opacity-100"
+                                src="https://lh3.googleusercontent.com/aida-public/AB6AXuC45WAry_-031VGXmvTg1x3LB0SR119k74OLXG0w5UJ4u1p6B--sRpZRSJJFoDRZcgS56DJ97g8qhDPUV_qI7CbYA4iS29lauefdPlVI_NPvXzLG9YoK6ns1dUPaqO3Xz0BVV4vOFNFGc0glYPCOqA2E_odJ5oT8cfdGReY6axLM151gnT2of0EMecxDQX4Al2QRHlkGunMB7LfDO0hjIEw8znmAeh_7Yd7nLGI9CoAXC5mu3kKeBfriEhBnf0Lce-NiLoHEzsjPVY" />
+                            <img alt="Caravan exterior side"
+                                class="h-24 w-full cursor-pointer rounded-lg object-cover opacity-70 transition-opacity hover:opacity-100"
+                                src="https://lh3.googleusercontent.com/aida-public/AB6AXuDH48BiCibkWhMO0b86teDAn1YPWQMyOi0V_Rb2W5hVNwQcQGi_5TYrh1Egt1x24nDGBWfUlpPJ7WFGRhykv6l0-75N1xJU8BKnLCYEX26D2_ZIMQnHDoiC9NiTlVioBaaKEejyNVtVJNg5WUXwP-bTdjEozysQmfa4zHPzdH_62Mp2ZQBLrIxyqQE7z3uy254732zGhFFFuNF-ZkfAVvC6kxhvpgVBZ6L26FUloKvlEwPCIyXBerRpjmW4S4dY_FMtb6ew5PGfzUg" />
+                        </div>
+                    </div>
+                    <div class="flex flex-col">
+                        <h1 class="text-3xl font-bold tracking-tight text-stone-900 dark:text-white"> Jayco Journey
+                        </h1>
+                        <p class="mt-2 text-stone-600 dark:text-stone-400">By <a
+                                class="font-medium text-primary hover:underline" href="#">Franklin Caravans</a></p>
+                        <p class="mt-4 text-base text-stone-700 dark:text-stone-300">
+                            The Wanderer 206 is a luxurious and spacious caravan, perfect for extended trips and family
+                            vacations. It features a fully equipped kitchen, comfortable sleeping
+                            arrangements, and ample storage space.
+                        </p>
+                        <div class="mt-8 flex justify-end border-t border-stone-200 pt-8 dark:border-stone-800">
+                            <a href="select_your_vehicle.html">
+                                <button
+                                    class="flex w-full items-center justify-center gap-2 rounded-lg bg-primary px-6 py-3 text-base font-bold text-white shadow-lg transition-transform hover:scale-105 active:scale-100 sm:w-auto">
+                                    <span>Can I Tow?</span>
+                                    <svg fill="currentColor" height="20" viewbox="0 0 256 256" width="20"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path
+                                            d="M224.49,136.49l-72,72a12,12,0,0,1-17-17L187,140H40a12,12,0,0,1,0-24H187L135.51,64.49a12,12,0,0,1,17-17l72,72A12,12,0,0,1,224.49,136.49Z">
+                                        </path>
+                                    </svg>
+                                </button>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="border-t border-stone-200 pt-8 dark:border-stone-800">
+                    <h2 class="text-2xl font-bold text-stone-900 dark:text-white">Specifications</h2>
+                    <div class="mt-6 grid grid-cols-2 gap-x-6 gap-y-4 sm:grid-cols-3 lg:grid-cols-4">
+                        <div class="space-y-1">
+                            <p class="text-sm text-stone-600 dark:text-stone-400">Year</p>
+                            <p class="font-medium text-stone-800 dark:text-stone-200">Jayco</p>
+                        </div>
+                        <div class="space-y-1">
+                            <p class="text-sm text-stone-600 dark:text-stone-400">Make</p>
+                            <p class="font-medium text-stone-800 dark:text-stone-200">Journey</p>
+                        </div>
+                        <!-- <div class="space-y-1">
+                            <p class="text-sm text-stone-600 dark:text-stone-400">Model</p>
+                            <p class="font-medium text-stone-800 dark:text-stone-200">206</p>
+                        </div> -->
+                        <div class="space-y-1">
+                            <p class="text-sm text-stone-600 dark:text-stone-400">Length</p>
+                            <p class="font-medium text-stone-800 dark:text-stone-200">20 ft 6 in</p>
+                        </div>
+                        <div class="space-y-1">
+                            <p class="text-sm text-stone-600 dark:text-stone-400">Width</p>
+                            <p class="font-medium text-stone-800 dark:text-stone-200">8 ft</p>
+                        </div>
+                        <div class="space-y-1">
+                            <p class="text-sm text-stone-600 dark:text-stone-400">Height</p>
+                            <p class="font-medium text-stone-800 dark:text-stone-200">10 ft 6 in</p>
+                        </div>
+                        <div class="space-y-1">
+                            <p class="text-sm text-stone-600 dark:text-stone-400">Dry Weight</p>
+                            <p class="font-medium text-stone-800 dark:text-stone-200">4,500 lbs</p>
+                        </div>
+                        <div class="space-y-1">
+                            <p class="text-sm text-stone-600 dark:text-stone-400">GVWR</p>
+                            <p class="font-medium text-stone-800 dark:text-stone-200">6,000 lbs</p>
+                        </div>
+                        <div class="space-y-1">
+                            <p class="text-sm text-stone-600 dark:text-stone-400">Hitch Weight</p>
+                            <p class="font-medium text-stone-800 dark:text-stone-200">600 lbs</p>
+                        </div>
+                        <div class="space-y-1">
+                            <p class="text-sm text-stone-600 dark:text-stone-400">Cargo Capacity</p>
+                            <p class="font-medium text-stone-800 dark:text-stone-200">1,500 lbs</p>
+                        </div>
+                        <div class="space-y-1">
+                            <p class="text-sm text-stone-600 dark:text-stone-400">Fresh Water</p>
+                            <p class="font-medium text-stone-800 dark:text-stone-200">40 gal</p>
+                        </div>
+                        <div class="space-y-1">
+                            <p class="text-sm text-stone-600 dark:text-stone-400">Gray Water</p>
+                            <p class="font-medium text-stone-800 dark:text-stone-200">30 gal</p>
+                        </div>
+                        <div class="space-y-1">
+                            <p class="text-sm text-stone-600 dark:text-stone-400">Black Water</p>
+                            <p class="font-medium text-stone-800 dark:text-stone-200">30 gal</p>
+                        </div>
+                        <div class="space-y-1">
+                            <p class="text-sm text-stone-600 dark:text-stone-400">Sleeping Capacity</p>
+                            <p class="font-medium text-stone-800 dark:text-stone-200">6</p>
+                        </div>
+                        <div class="space-y-1">
+                            <p class="text-sm text-stone-600 dark:text-stone-400">Slide-Outs</p>
+                            <p class="font-medium text-stone-800 dark:text-stone-200">1</p>
+                        </div>
+                        <div class="space-y-1">
+                            <p class="text-sm text-stone-600 dark:text-stone-400">Awning Length</p>
+                            <p class="font-medium text-stone-800 dark:text-stone-200">12 ft</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+</body>
+
+</html>

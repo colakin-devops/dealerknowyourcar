@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <link crossorigin="" href="https://fonts.gstatic.com/" rel="preconnect" />
+    <link as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap"
+        onload="this.rel='stylesheet'" rel="stylesheet" />
+    <title>Know My Tow - Report</title>
+    <link rel="shortcut icon" href="../assets/favicon.png" type="image/x-icon">
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        primary: "#66cd4f",
+                        "background-light": "#f6f8f6",
+                        "background-dark": "#152111",
+                        "text-light": "#181311",
+                        "text-dark": "#f8f6f6",
+                        "subtle-light": "#896f61",
+                        "subtle-dark": "#a18d84",
+                        "border-light": "#e6dfdb",
+                        "border-dark": "#3a2a22"
+                    },
+                    fontFamily: {
+                        display: "Plus Jakarta Sans"
+                    },
+                    borderRadius: {
+                        DEFAULT: "0.5rem",
+                        lg: "1rem",
+                        xl: "1.5rem",
+                        full: "9999px"
+                    }
+                }
+            }
+        };
+    </script>
+</head>
+
+<body class="font-sans bg-background-light dark:bg-background-dark text-text-light dark:text-text-dark">
+    <div class="flex min-h-screen items-center justify-center px-4">
+        <div class="w-full max-w-xl bg-white dark:bg-zinc-900 shadow-xl rounded-xl p-8 space-y-6">
+
+            <!-- Title -->
+            <div class="text-center space-y-2">
+                <h1 class="text-2xl sm:text-3xl font-bold">
+                    Save <span class="text-primary">Report</span> Details
+                </h1>
+                <!-- <p class="text-sm text-subtle">(This is optional)</p> -->
+            </div>
+
+            <!-- Form -->
+            <form class="space-y-5">
+                <input type="text" placeholder='Name of Report "Dream Setup"'
+                    class="w-full border border-gray-300 rounded-lg px-4 py-3 text-base focus:ring-2 focus:ring-primary outline-none" />
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    <input type="text" placeholder="First Name" value="Ramesh"
+                        class="w-full border border-gray-300 rounded-lg px-4 py-3 text-base focus:ring-2 focus:ring-primary outline-none" />
+                    <input type="text" placeholder="Last Name" value="Rajaram"
+                        class="w-full border border-gray-300 rounded-lg px-4 py-3 text-base focus:ring-2 focus:ring-primary outline-none" />
+                </div>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    <input type="email" placeholder="Email" value="ramesh@colakin.com"
+                        class="w-full border border-gray-300 rounded-lg px-4 py-3 text-base focus:ring-2 focus:ring-primary outline-none" />
+                    <input type="text" placeholder="Phone"
+                        class="w-full border border-gray-300 rounded-lg px-4 py-3 text-base focus:ring-2 focus:ring-primary outline-none" />
+                </div>
+
+                <!-- Save Button -->
+                <a href="vehicle-report.pdf" target="_blank"
+                    class="w-full mt-4 rounded-full bg-black text-white text-lg font-semibold py-3 hover:opacity-90 transition block text-center">
+                    SAVE DETAILS
+                </a>
+
+            </form>
+
+            <!-- Skip link -->
+            <div class="text-center">
+                <p class="text-sm text-gray-500">or</p>
+                <a href="index.html" class="text-sm font-bold text-black dark:text-white underline">SKIP</a>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

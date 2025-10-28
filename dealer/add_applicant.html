@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+  <title>Know My Tow - Dealer Leads</title>
+  <link rel="shortcut icon" href="../assets/favicon.png" type="image/x-icon">
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <link href="https://fonts.googleapis.com" rel="preconnect" />
+  <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&amp;display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+  <script>
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            primary: "#66cd4f",
+            "background-light": "#f6f8f6",
+            "background-dark": "#142111",
+            "accent-green": "#5DC04A",
+            "content-light": "#142111",
+            "content-dark": "#f6f8f6",
+            "subtle-light": "#dde5dc",
+            "subtle-dark": "#334c2f",
+          },
+          fontFamily: {
+            display: ["Inter"],
+          },
+          borderRadius: {
+            DEFAULT: "0.5rem",
+            lg: "1rem",
+            xl: "1.5rem",
+            full: "9999px",
+          },
+        },
+      },
+    };
+  </script>
+</head>
+
+<body class="bg-background-light dark:bg-background-dark font-display text-content-light dark:text-content-dark">
+  <div class="flex min-h-screen w-full">
+    <!-- Sidebar -->
+    <aside
+      class="fixed top-0 left-0 h-screen w-64 bg-surface-light dark:bg-surface-dark">
+      <!-- Logo -->
+      <div class="p-4 flex justify-center">
+        <a href="">
+          <img class="w-40 h-auto" src="../assets/hyundai.png" 
+          alt="Know My Tow Logo">
+        </a>
+      </div>
+
+      <!-- Main Navigation -->
+      <nav class="flex-1 space-y-2 px-4">
+        <a href=""
+          class="flex items-center gap-3 rounded-lg px-3 py-2 text-background-dark dark:text-background-light transition-all hover:bg-primary/10 dark:hover:bg-primary/20 hover:text-primary">
+
+          <span class="material-symbols-outlined">dashboard</span>
+          Dashboard
+        </a>
+        <a class="flex items-center gap-3 rounded-lg px-3 py-2 text-background-dark dark:text-background-light transition-all hover:bg-primary/10 dark:hover:bg-primary/20 hover:text-primary"
+          href="inventory.html">
+          <span class="material-symbols-outlined">directions_car</span>
+          Car
+        </a>
+        <a class="flex items-center gap-3 rounded-md px-3 py-2 text-white bg-gradient-to-r from-[#66cd4f] to-[#93dc84] hover:from-[#57b843] hover:to-[#7fcf6e] transition-all"
+          href="leads.html">
+          <span class="material-symbols-outlined">groups</span>
+          Applicant
+        </a>
+
+        <a class="flex items-center gap-3 rounded-lg px-3 py-2 text-background-dark dark:text-background-light transition-all hover:bg-primary/10 dark:hover:bg-primary/20 hover:text-primary"
+          href="report/report.html">
+          <span class="material-symbols-outlined">assessment</span>
+          Application
+        </a>
+        <a class="flex items-center gap-3 rounded-lg px-3 py-2 text-background-dark dark:text-background-light transition-all hover:bg-primary/10 dark:hover:bg-primary/20 hover:text-primary"
+          href="plans.html">
+          <span class="material-symbols-outlined">star</span>
+          Plan
+        </a>
+        <a class="flex items-center gap-3 rounded-lg px-3 py-2 text-background-dark dark:text-background-light transition-all hover:bg-primary/10 dark:hover:bg-primary/20 hover:text-primary"
+          href="support.html">
+          <span class="material-symbols-outlined">support_agent</span>
+          Support
+        </a>
+        <a class="flex items-center gap-3 rounded-lg px-3 py-2 text-background-dark dark:text-background-light transition-all hover:bg-primary/10 dark:hover:bg-primary/20 hover:text-primary"
+          href="settings.html">
+          <span class="material-symbols-outlined">settings</span>
+          Settings
+        </a>
+
+        <!-- Help -->
+        <a class="flex items-center gap-3 rounded-lg px-3 py-2 text-background-dark dark:text-background-light transition-all hover:bg-primary/10 dark:hover:bg-primary/20 hover:text-primary"
+          href="help.html">
+          <span class="material-symbols-outlined">help</span>
+          Help
+        </a>
+      </nav>
+    </aside>
+
+
+
+    <!-- Main content area -->
+    <div class="flex flex-1 flex-col">
+      <!-- Header -->
+      <header
+        class="flex items-center justify-end border-b border-primary/20 dark:border-primary/30 px-6 sm:px-10 py-4 h-[77px]">
+        <div class="flex items-center gap-4">
+          <a href="notifications.html">
+            <button
+              class="flex h-10 w-10 cursor-pointer items-center justify-center rounded-full bg-primary/10 text-background-dark dark:text-background-light hover:bg-primary/20 dark:hover:bg-primary/30 transition-colors">
+              <span class="material-symbols-outlined"> notifications </span>
+            </button>
+          </a>
+          <div class="relative inline-block">
+            <!-- Profile Icon -->
+            <div id="profileBtn" class="w-8 h-8 bg-cover rounded-full cursor-pointer"
+              style="background-image: url('../assets/user.png');">
+            </div>
+
+            <!-- Popup -->
+            <div id="profilePopup"
+              class="hidden absolute right-0 mt-2 w-60 bg-white border rounded-lg shadow-lg p-4 z-50">
+              <div class="flex items-center space-x-3">
+                <img src="../assets/user.png" class="w-10 h-10 rounded-full" />
+                <div>
+                  <p class="font-semibold text-black">John Doe</p>
+                  <p class="text-sm text-gray-500">john@dow.com</p>
+                </div>
+              </div>
+              <hr class="my-3">
+              <p class="text-sm text-gray-700 pl-3">Dealer</p>
+              <a href="../dealer/login.html">
+                <button class="mt-2 w-full text-left text-black px-3 py-2 rounded-lg hover:bg-gray-100">Log
+                  out</button>
+              </a>
+            </div>
+            <script>
+              const btn = document.getElementById("profileBtn");
+              const popup1 = document.getElementById("profilePopup");
+
+              btn.addEventListener("click", () => {
+                popup1.classList.toggle("hidden");
+              });
+              document.addEventListener("click", (e) => {
+                if (!btn.contains(e.target) && !popup1.contains(e.target)) {
+                  popup1.classList.add("hidden");
+                }
+              });
+            </script>
+          </div>
+        </div>
+      </header>
+
+      <!-- Leads Content -->
+      <main class="flex-1 px-4 sm:px-6 lg:px-8 py-12 bg-background-light dark:bg-background-dark min-h-screen">
+  <div class="mx-auto max-w-3xl">
+    <div class="space-y-8">
+      <!-- Title -->
+      <div>
+        <h1 class="text-3xl font-bold tracking-tight text-zinc-900 dark:text-white">Invite Applicant</h1>
+        <p class="mt-2 text-sm text-zinc-600 dark:text-zinc-400">
+          Enter the applicant’s details and vehicle information to send an invite.
+        </p>
+      </div>
+
+      <!-- Form -->
+      <form id="inviteForm" class="space-y-6">
+        <!-- Applicant Details -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+          <div>
+            <label for="applicant-name" class="block text-sm font-medium text-zinc-700 dark:text-zinc-300">Applicant Name</label>
+            <input type="text" id="applicant-name" placeholder="John Doe"
+              class="form-input mt-1 block w-full rounded-lg border border-primary/20 bg-background-light dark:bg-background-dark text-zinc-900 dark:text-white placeholder:text-zinc-500 focus:border-primary focus:ring-primary" />
+          </div>
+          <div>
+            <label for="phone" class="block text-sm font-medium text-zinc-700 dark:text-zinc-300">Phone No</label>
+            <input type="text" id="phone" placeholder="+91 9876543210"
+              class="form-input mt-1 block w-full rounded-lg border border-primary/20 bg-background-light dark:bg-background-dark text-zinc-900 dark:text-white placeholder:text-zinc-500 focus:border-primary focus:ring-primary" />
+          </div>
+        </div>
+
+        <div>
+          <label for="email" class="block text-sm font-medium text-zinc-700 dark:text-zinc-300">Email</label>
+          <input type="email" id="email" placeholder="john.doe@example.com"
+            class="form-input mt-1 block w-full rounded-lg border border-primary/20 bg-background-light dark:bg-background-dark text-zinc-900 dark:text-white placeholder:text-zinc-500 focus:border-primary focus:ring-primary" />
+        </div>
+
+        <!-- List of Cars -->
+        <div>
+          <label for="car" class="block text-sm font-medium text-zinc-700 dark:text-zinc-300">List of Cars</label>
+          <select id="car"
+            class="form-select mt-1 block w-full rounded-lg border border-primary/20 bg-background-light dark:bg-background-dark text-zinc-900 dark:text-white focus:border-primary focus:ring-primary">
+            <option>Hyundai Creta SX (O)</option>
+            <option>Hyundai EXTER 1.2MT Kappa EX</option>
+            <option>Hyundai Venue Turbo GDI</option>
+          </select>
+        </div>
+
+        <!-- Vehicle Information -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+          <div>
+            <label class="block text-sm font-medium text-zinc-700 dark:text-zinc-300">Vehicle Type</label>
+            <input type="text" placeholder="New"
+              class="form-input mt-1 block w-full rounded-lg border border-primary/20 bg-background-light dark:bg-background-dark text-zinc-900 dark:text-white placeholder:text-zinc-500 focus:border-primary focus:ring-primary" />
+          </div>
+          <div>
+            <label class="block text-sm font-medium text-zinc-700 dark:text-zinc-300">Vehicle Make</label>
+            <input type="text" placeholder="Hyundai"
+              class="form-input mt-1 block w-full rounded-lg border border-primary/20 bg-background-light dark:bg-background-dark text-zinc-900 dark:text-white placeholder:text-zinc-500 focus:border-primary focus:ring-primary" />
+          </div>
+          <div>
+            <label class="block text-sm font-medium text-zinc-700 dark:text-zinc-300">Vehicle Model</label>
+            <input type="text" placeholder="EXTER 1.2MT Kappa EX"
+              class="form-input mt-1 block w-full rounded-lg border border-primary/20 bg-background-light dark:bg-background-dark text-zinc-900 dark:text-white placeholder:text-zinc-500 focus:border-primary focus:ring-primary" />
+          </div>
+          <div>
+            <label class="block text-sm font-medium text-zinc-700 dark:text-zinc-300">Dealer Name</label>
+            <input type="text" placeholder="PEEYESYEM HYUNDAI"
+              class="form-input mt-1 block w-full rounded-lg border border-primary/20 bg-background-light dark:bg-background-dark text-zinc-900 dark:text-white placeholder:text-zinc-500 focus:border-primary focus:ring-primary" />
+          </div>
+          <div>
+            <label class="block text-sm font-medium text-zinc-700 dark:text-zinc-300">Cost of Vehicle</label>
+            <input type="text" placeholder="₹563,033.00"
+              class="form-input mt-1 block w-full rounded-lg border border-primary/20 bg-background-light dark:bg-background-dark text-zinc-900 dark:text-white placeholder:text-zinc-500 focus:border-primary focus:ring-primary" />
+          </div>
+          <div>
+            <label class="block text-sm font-medium text-zinc-700 dark:text-zinc-300">Cost of Accessories</label>
+            <input type="text" placeholder="₹0.00"
+              class="form-input mt-1 block w-full rounded-lg border border-primary/20 bg-background-light dark:bg-background-dark text-zinc-900 dark:text-white placeholder:text-zinc-500 focus:border-primary focus:ring-primary" />
+          </div>
+          <div>
+            <label class="block text-sm font-medium text-zinc-700 dark:text-zinc-300">Insurance</label>
+            <input type="text" placeholder="₹33,630.00"
+              class="form-input mt-1 block w-full rounded-lg border border-primary/20 bg-background-light dark:bg-background-dark text-zinc-900 dark:text-white placeholder:text-zinc-500 focus:border-primary focus:ring-primary" />
+          </div>
+          <div>
+            <label class="block text-sm font-medium text-zinc-700 dark:text-zinc-300">Road Tax</label>
+            <input type="text" placeholder="₹75,644.00"
+              class="form-input mt-1 block w-full rounded-lg border border-primary/20 bg-background-light dark:bg-background-dark text-zinc-900 dark:text-white placeholder:text-zinc-500 focus:border-primary focus:ring-primary" />
+          </div>
+        </div>
+
+        <!-- Total Cost -->
+        <div class="text-center mt-6">
+          <p class="text-sm text-zinc-600 dark:text-zinc-400 uppercase tracking-wide font-semibold">Total Cost</p>
+          <input type="text" placeholder="₹672,307.00"
+              class="form-input mt-1 block w-full rounded-lg border border-primary/20 bg-background-light dark:bg-background-dark text-zinc-900 dark:text-white placeholder:text-zinc-500 focus:border-primary focus:ring-primary text-center" />
+          </div>
+        </div>
+
+        <!-- Submit Button -->
+        <div class="flex justify-end pt-4">
+          <button type="submit"
+            class="inline-flex items-center justify-center rounded-lg border border-transparent bg-primary px-6 py-2 text-base font-medium text-zinc-900 shadow-sm hover:bg-primary/90 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 dark:focus:ring-offset-background-dark">
+            Send Email
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- Success Popup -->
+  <div id="popup"
+    class="hidden fixed inset-0 bg-black/50 flex items-center justify-center z-50">
+    <div class="bg-white dark:bg-zinc-800 p-6 rounded-xl shadow-xl text-center">
+      <h2 class="text-xl font-semibold text-green-600">Email Sent Successfully!</h2>
+      <button onclick="closePopup()" class="mt-4 px-4 py-2 bg-primary text-zinc-900 rounded-lg font-medium hover:bg-primary/90">
+        OK
+      </button>
+    </div>
+  </div>
+
+  <script>
+    const form = document.getElementById("inviteForm");
+    const popup = document.getElementById("popup");
+
+    form.addEventListener("submit", function (e) {
+      e.preventDefault();
+      popup.classList.remove("hidden");
+    });
+
+    function closePopup() {
+      popup.classList.add("hidden");
+      form.reset();
+    }
+  </script>
+</main>
+
+    </div>
+  </div>
+</body>
+
+</html>

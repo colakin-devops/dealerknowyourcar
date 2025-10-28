@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+  <title>Know My Tow - Support</title>
+  <link rel="shortcut icon" href="../assets/favicon.png" type="image/x-icon">
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <link href="https://fonts.googleapis.com" rel="preconnect" />
+  <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+  <style>
+    .material-symbols-outlined {
+      font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 24;
+    }
+  </style>
+  <script>
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            primary: "#66cd4f",
+            "background-light": "#f6f8f6",
+            "background-dark": "#142111",
+            "accent-green": "#5DC04A",
+          },
+          fontFamily: {
+            display: ["Inter"],
+          },
+          borderRadius: {
+            DEFAULT: "0.5rem",
+            lg: "1rem",
+            xl: "1.5rem",
+            full: "9999px",
+          },
+          boxShadow: {
+            soft: "0 4px 6px rgba(0,0,0,0.05)",
+          }
+        },
+      },
+    };
+  </script>
+</head>
+
+<body class="bg-background-light dark:bg-background-dark font-display text-background-dark dark:text-background-light">
+  <div class="flex min-h-screen w-full">
+    <!-- Sidebar -->
+    <aside
+      class="fixed top-0 left-0 h-screen w-64 bg-surface-light dark:bg-surface-dark border-r border-primary/20 dark:border-primary/30 bg-background-light dark:bg-background-dark">
+      <!-- Logo -->
+      <div class="p-4 flex justify-center">
+        <a href="">
+          <img class="w-40 h-auto" src="../assets/hyundai.png" 
+          alt="Know My Tow Logo">
+        </a>
+      </div>
+
+      <!-- Main Navigation -->
+      <nav class="flex-1 space-y-2 px-4">
+        <a href="dashboard.html"
+          class="flex items-center gap-3 rounded-lg px-3 py-2 text-background-dark dark:text-background-light transition-all hover:bg-primary/10 dark:hover:bg-primary/20 hover:text-primary">
+
+          <span class="material-symbols-outlined">dashboard</span>
+          Dashboard
+        </a>
+        <a class="flex items-center gap-3 rounded-lg px-3 py-2 text-background-dark dark:text-background-light transition-all hover:bg-primary/10 dark:hover:bg-primary/20 hover:text-primary"
+          href="inventory.html">
+          <span class="material-symbols-outlined">directions_car</span>
+          Car
+        </a>
+        <a class="flex items-center gap-3 rounded-lg px-3 py-2 text-background-dark dark:text-background-light transition-all hover:bg-primary/10 dark:hover:bg-primary/20 hover:text-primary"
+          href="leads.html">
+          <span class="material-symbols-outlined">groups</span>
+          Applicant
+        </a>
+
+        <a class="flex items-center gap-3 rounded-lg px-3 py-2 text-background-dark dark:text-background-light transition-all hover:bg-primary/10 dark:hover:bg-primary/20 hover:text-primary"
+          href="report/report.html">
+          <span class="material-symbols-outlined">assessment</span>
+          Application
+        </a>
+        <a class="flex items-center gap-3 rounded-lg px-3 py-2 text-background-dark dark:text-background-light transition-all hover:bg-primary/10 dark:hover:bg-primary/20 hover:text-primary"
+          href="plans.html">
+          <span class="material-symbols-outlined">star</span>
+          Plan
+        </a>
+        <a class="flex items-center gap-3 rounded-md px-3 py-2 text-white bg-gradient-to-r from-[#66cd4f] to-[#93dc84] hover:from-[#57b843] hover:to-[#7fcf6e] transition-all"
+          href="support.html">
+          <span class="material-symbols-outlined">support_agent</span>
+          Support
+        </a>
+        <a class="flex items-center gap-3 rounded-lg px-3 py-2 text-background-dark dark:text-background-light transition-all hover:bg-primary/10 dark:hover:bg-primary/20 hover:text-primary"
+          href="settings.html">
+          <span class="material-symbols-outlined">settings</span>
+          Settings
+        </a>
+
+        <!-- Help -->
+        <a class="flex items-center gap-3 rounded-lg px-3 py-2 text-background-dark dark:text-background-light transition-all hover:bg-primary/10 dark:hover:bg-primary/20 hover:text-primary"
+          href="help.html">
+          <span class="material-symbols-outlined">help</span>
+          Help
+        </a>
+      </nav>
+    </aside>
+
+    <!-- Main Content -->
+    <div class="flex-1 flex flex-col ml-64 min-h-screen">
+      <!-- Header -->
+      <header
+        class="flex items-center justify-end border-b border-primary/20 dark:border-primary/30 px-6 sm:px-10 py-4 h-[77px]">
+        <div class="flex items-center gap-4">
+          <a href="notifications.html">
+            <button
+              class="flex h-10 w-10 cursor-pointer items-center justify-center rounded-full bg-primary/10 text-background-dark dark:text-background-light hover:bg-primary/20 dark:hover:bg-primary/30 transition-colors">
+              <span class="material-symbols-outlined"> notifications </span>
+            </button>
+          </a>
+          <div class="relative inline-block">
+            <!-- Profile Icon -->
+            <div id="profileBtn" class="w-8 h-8 bg-cover rounded-full cursor-pointer"
+              style="background-image: url('../assets/user.png');">
+            </div>
+
+            <!-- Popup -->
+            <div id="profilePopup"
+              class="hidden absolute right-0 mt-2 w-60 bg-white border rounded-lg shadow-lg p-4 z-50">
+              <div class="flex items-center space-x-3">
+                <img src="../assets/user.png" class="w-10 h-10 rounded-full" />
+                <div>
+                  <p class="font-semibold text-black">John Doe</p>
+                  <p class="text-sm text-gray-500">john@dow.com</p>
+                </div>
+              </div>
+              <hr class="my-3">
+              <p class="text-sm text-gray-700 pl-3">Dealer</p>
+              <a href="../dealer/login.html">
+                <button class="mt-2 w-full text-left text-black px-3 py-2 rounded-lg hover:bg-gray-100">Log
+                  out</button>
+              </a>
+            </div>
+            <script>
+              const btn = document.getElementById("profileBtn");
+              const popup = document.getElementById("profilePopup");
+
+              btn.addEventListener("click", () => {
+                popup.classList.toggle("hidden");
+              });
+              document.addEventListener("click", (e) => {
+                if (!btn.contains(e.target) && !popup.contains(e.target)) {
+                  popup.classList.add("hidden");
+                }
+              });
+            </script>
+          </div>
+        </div>
+      </header>
+
+      <!-- Support Content -->
+      <main class="flex-1 px-4 py-8 sm:px-6 lg:px-12">
+        <div class="mx-auto max-w-6xl">
+          <!-- Title -->
+          <div class="mb-12 text-center">
+            <h1 class="text-3xl font-bold tracking-tight">Support</h1>
+            <p class="text-neutral-600 dark:text-neutral-300 mt-2 max-w-2xl mx-auto">
+              Need help? Submit a support ticket and track your requests below.
+            </p>
+          </div>
+
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
+            <!-- Submit a Ticket -->
+            <section class="bg-white dark:bg-background-dark rounded-xl shadow-soft p-8">
+              <h2 class="text-2xl font-bold mb-6">Submit a Ticket</h2>
+              <form class="space-y-6">
+                <div>
+                  <label class="block text-sm font-medium mb-2" for="subject">Subject</label>
+                  <input
+                    class="form-input w-full bg-background-light dark:bg-background-dark border border-primary/20 dark:border-primary/30 rounded-lg focus:ring-primary focus:border-primary"
+                    id="subject" name="subject" placeholder="e.g., Incorrect Vehicle Listing Price" type="text" />
+                </div>
+                <div>
+                  <label class="block text-sm font-medium mb-2" for="message">Message</label>
+                  <textarea
+                    class="form-textarea w-full bg-background-light dark:bg-background-dark border border-primary/20 dark:border-primary/30 rounded-lg focus:ring-primary focus:border-primary"
+                    id="message" name="message" placeholder="Describe your issue in detail..." rows="5"></textarea>
+                </div>
+                <div>
+                  <label class="block text-sm font-medium mb-2" for="attachment">Attachment</label>
+                  <div class="relative">
+                    <input class="hidden" id="attachment-input" type="file" />
+                    <label
+                      class="flex items-center justify-between w-full bg-background-light dark:bg-background-dark border border-primary/20 dark:border-primary/30 rounded-lg cursor-pointer"
+                      for="attachment-input">
+                      <span class="p-3 text-neutral-500 dark:text-neutral-300 truncate" id="file-name">No file
+                        chosen</span>
+                      <span
+                        class="flex items-center justify-center px-4 py-3 bg-primary/10 dark:bg-primary/20 text-primary font-medium rounded-r-lg">
+                        <span class="material-symbols-outlined mr-2">upload_file</span>
+                        Browse
+                      </span>
+                    </label>
+                  </div>
+                </div>
+                <div class="flex justify-end">
+                  <button
+                    class="bg-accent-green text-white font-bold py-3 px-6 rounded-lg hover:bg-accent-green/90 transition-all"
+                    type="submit">
+                    Submit Ticket
+                  </button>
+                </div>
+              </form>
+            </section>
+
+            <!-- Submitted Tickets -->
+            <section class="bg-white dark:bg-background-dark rounded-xl shadow-soft p-8">
+              <h2 class="text-2xl font-bold mb-6">Submitted Tickets</h2>
+              <div class="overflow-x-auto">
+                <table class="w-full text-left">
+                  <thead class="bg-background-light dark:bg-background-dark">
+                    <tr>
+                      <th class="px-6 py-4 text-sm font-bold uppercase tracking-wider">Subject</th>
+                      <th class="px-6 py-4 text-sm font-bold uppercase tracking-wider">Status</th>
+                      <th class="px-6 py-4 text-sm font-bold uppercase tracking-wider text-right">Date</th>
+                    </tr>
+                  </thead>
+                  <tbody class="divide-y divide-primary/20 dark:divide-primary/30">
+                    <tr>
+                      <td class="px-6 py-4 font-medium">Test drive</td>
+                      <td class="px-6 py-4">
+                        <span
+                          class="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-300">Approved</span>
+                      </td>
+                      <td class="px-6 py-4 text-right">25-10-2025</td>
+                    </tr>
+                    <tr>
+                      <td class="px-6 py-4 font-medium">Vehicle damage</td>
+                      <td class="px-6 py-4">
+                        <span
+                          class="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-red-100 text-red-800 dark:bg-red-900 dark:text-red-300">Declined</span>
+                      </td>
+                      <td class="px-6 py-4 text-right">15-10-2025</td>
+                    </tr>
+                    <tr>
+                      <td class="px-6 py-4 font-medium">Warranty claim</td>
+                      <td class="px-6 py-4">
+                        <span
+                          class="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-red-100 text-red-800 dark:bg-red-900 dark:text-red-300">Declined</span>
+                      </td>
+                      </td>
+                      <td class="px-6 py-4 text-right">11-10-2025</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </section>
+          </div>
+        </div>
+      </main>
+    </div>
+  </div>
+
+  <script>
+    const fileInput = document.getElementById('attachment-input');
+    const fileNameSpan = document.getElementById('file-name');
+    if (fileInput) {
+      fileInput.addEventListener('change', function () {
+        fileNameSpan.textContent = this.files?.[0]?.name || 'No file chosen';
+      });
+    }
+  </script>
+</body>
+
+</html>

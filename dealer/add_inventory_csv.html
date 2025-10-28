@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <title>Know My Tow - Import Inventories</title>
+    <link rel="shortcut icon" href="../assets/favicon.png" type="image/x-icon">
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&amp;display=swap"
+        rel="stylesheet" />
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        primary: "#66cd4f",
+                        "background-light": "#f6f8f6",
+                        "background-dark": "#142111",
+                        "foreground-light": "#121711",
+                        "foreground-dark": "#f6f8f6",
+                        "subtle-light": "#6a8764",
+                        "subtle-dark": "#a0bfa0",
+                        "border-light": "#dde5dc",
+                        "border-dark": "#30422d",
+                    },
+                    fontFamily: {
+                        display: ["Inter"],
+                    },
+                    borderRadius: {
+                        DEFAULT: "0.5rem",
+                        lg: "1rem",
+                        xl: "1.5rem",
+                        full: "9999px",
+                    },
+                },
+            },
+        };
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+</head>
+
+<body class="bg-background-light dark:bg-background-dark font-display text-foreground-light dark:text-foreground-dark">
+    <div class="relative flex min-h-screen w-full overflow-x-hidden">
+        <div class="layout-container flex h-full grow flex-row">
+
+            <!-- Sidebar -->
+            <aside
+      class="flex w-64 flex-col border-r border-primary/20 dark:border-primary/30 bg-background-light dark:bg-background-dark">
+      <!-- Logo -->
+      <div class="p-4 flex justify-center">
+        <a href="">
+          <img class="w-40 h-auto" src="../assets/hyundai.png" 
+          alt="Know My Tow Logo">
+        </a>
+      </div>
+
+      <!-- Main Navigation -->
+      <nav class="flex-1 space-y-2 px-4">
+        <a href=""
+          class="flex items-center gap-3 rounded-lg px-3 py-2 text-background-dark dark:text-background-light transition-all hover:bg-primary/10 dark:hover:bg-primary/20 hover:text-primary">
+
+          <span class="material-symbols-outlined">dashboard</span>
+          Dashboard
+        </a>
+        <a class="flex items-center gap-3 rounded-md px-3 py-2 text-white bg-gradient-to-r from-[#66cd4f] to-[#93dc84] hover:from-[#57b843] hover:to-[#7fcf6e] transition-all"
+          href="inventory.html">
+          <span class="material-symbols-outlined">directions_car</span>
+          Car
+        </a>
+        <a class="flex items-center gap-3 rounded-lg px-3 py-2 text-background-dark dark:text-background-light transition-all hover:bg-primary/10 dark:hover:bg-primary/20 hover:text-primary"
+          href="leads.html">
+          <span class="material-symbols-outlined">groups</span>
+          Applicant
+        </a>
+
+        <a class="flex items-center gap-3 rounded-lg px-3 py-2 text-background-dark dark:text-background-light transition-all hover:bg-primary/10 dark:hover:bg-primary/20 hover:text-primary"
+          href="report/report.html">
+          <span class="material-symbols-outlined">assessment</span>
+          Application
+        </a>
+        <a class="flex items-center gap-3 rounded-lg px-3 py-2 text-background-dark dark:text-background-light transition-all hover:bg-primary/10 dark:hover:bg-primary/20 hover:text-primary"
+          href="plans.html">
+          <span class="material-symbols-outlined">star</span>
+          Plan
+        </a>
+        <a class="flex items-center gap-3 rounded-lg px-3 py-2 text-background-dark dark:text-background-light transition-all hover:bg-primary/10 dark:hover:bg-primary/20 hover:text-primary"
+          href="support.html">
+          <span class="material-symbols-outlined">support_agent</span>
+          Support
+        </a>
+        <a class="flex items-center gap-3 rounded-lg px-3 py-2 text-background-dark dark:text-background-light transition-all hover:bg-primary/10 dark:hover:bg-primary/20 hover:text-primary"
+          href="settings.html">
+          <span class="material-symbols-outlined">settings</span>
+          Settings
+        </a>
+
+        <!-- Help -->
+        <a class="flex items-center gap-3 rounded-lg px-3 py-2 text-background-dark dark:text-background-light transition-all hover:bg-primary/10 dark:hover:bg-primary/20 hover:text-primary"
+          href="help.html">
+          <span class="material-symbols-outlined">help</span>
+          Help
+        </a>
+      </nav>
+    </aside>
+
+            <!-- Main Content -->
+            <div class="flex-1 flex flex-col">
+                <header
+                    class="flex items-center justify-between whitespace-nowrap border-b border-border-light dark:border-border-dark px-10 py-3">
+                    <div class="flex items-center gap-4">
+                        <button class="md:hidden">
+                            <span class="material-symbols-outlined">menu</span>
+                        </button>
+                    </div>
+                    <div class="flex flex-1 justify-end gap-2">
+                        <div class="flex items-center gap-4 ml-6">
+                            <a href="notifications.html">
+                                <button
+                                    class="flex h-10 w-10 cursor-pointer items-center justify-center rounded-full bg-primary/10 text-background-dark dark:text-background-light hover:bg-primary/20 dark:hover:bg-primary/30 transition-colors">
+                                    <span class="material-symbols-outlined"> notifications </span>
+                                </button>
+                            </a>
+                            <div class="relative inline-block">
+                                <!-- Profile Icon -->
+                                <div id="profileBtn" class="w-8 h-8 bg-cover rounded-full cursor-pointer"
+                                    style="background-image: url('../assets/user.png');">
+                                </div>
+
+                                <!-- Popup -->
+                                <div id="profilePopup"
+                                    class="hidden absolute right-0 mt-2 w-60 bg-white border rounded-lg shadow-lg p-4 z-50">
+                                    <div class="flex items-center space-x-3">
+                                        <img src="../assets/user.png" class="w-10 h-10 rounded-full" />
+                                        <div>
+                                            <p class="font-semibold text-black">John Doe</p>
+                                            <p class="text-sm text-gray-500">john@dow.com</p>
+                                        </div>
+                                    </div>
+                                    <hr class="my-3">
+                                    <p class="text-sm text-gray-700 pl-3">Dealer</p>
+                                    <a href="../dealer/login.html">
+                                        <button
+                                            class="mt-2 w-full text-left text-black px-3 py-2 rounded-lg hover:bg-gray-100">Log
+                                            out</button>
+                                    </a>
+                                </div>
+                                <script>
+                                    const btn = document.getElementById("profileBtn");
+                                    const popup = document.getElementById("profilePopup");
+
+                                    btn.addEventListener("click", () => {
+                                        popup.classList.toggle("hidden");
+                                    });
+                                    document.addEventListener("click", (e) => {
+                                        if (!btn.contains(e.target) && !popup.contains(e.target)) {
+                                            popup.classList.add("hidden");
+                                        }
+                                    });
+                                </script>
+                            </div>
+                        </div>
+                    </div>
+                </header>
+
+                <!-- Page Content -->
+                <main class="flex-grow container mx-auto px-4 sm:px-6 lg:px-8 py-6 md:py-10">
+                    <div class="max-w-7xl mx-auto">
+                        <div class="mb-8">
+                            <h2 class="text-3xl font-bold tracking-tight">Import Car Details</h2>
+                            <p class="mt-1 text-subtle-light dark:text-subtle-dark">Upload a CSV file to bulk-import
+                                Inventory data</p>
+                        </div>
+
+                        <!-- Tabs -->
+                        <div class="border-b border-border-light dark:border-border-dark mb-8">
+                            <nav aria-label="Tabs" class="-mb-px flex space-x-8">
+                                <a aria-current="page"
+                                    class="border-primary text-foreground-light dark:text-foreground-dark whitespace-nowrap py-4 px-1 border-b-2 font-medium text-sm"
+                                    href="">Import CSV</a>
+                                <a class="border-transparent text-subtle-light dark:text-subtle-dark hover:border-border-light dark:hover:border-border-dark hover:text-foreground-light dark:hover:text-foreground-dark whitespace-nowrap py-4 px-1 border-b-2 font-medium text-sm"
+                                    href="add_inventory_manual-entry.html">Manual Entry</a>
+                            </nav>
+                        </div>
+
+                        <!-- Upload Box -->
+                        <div class="space-y-8">
+                            <div
+                                class="bg-background-light dark:bg-background-dark rounded-xl border border-border-light dark:border-border-dark p-6">
+                                <h3 class="text-lg font-medium">Upload File</h3>
+                                <p class="text-sm text-subtle-light dark:text-subtle-dark mt-1">Select or drag and drop
+                                    your CSV file
+                                    here.</p>
+                                <div
+                                    class="mt-4 flex justify-center rounded-lg border-2 border-dashed border-border-light dark:border-border-dark px-6 py-10">
+                                    <div class="text-center">
+                                        <span
+                                            class="material-symbols-outlined text-4xl text-subtle-light dark:text-subtle-dark">upload_file</span>
+                                        <div
+                                            class="mt-4 flex text-sm leading-6 text-subtle-light dark:text-subtle-dark">
+                                            <label
+                                                class="relative cursor-pointer rounded-md font-semibold text-primary hover:text-primary/80"
+                                                for="file-upload">
+                                                <span>Upload a file</span>
+                                                <input class="sr-only" id="file-upload" name="file-upload"
+                                                    type="file" />
+                                            </label>
+                                            <p class="pl-1">or drag and drop</p>
+                                        </div>
+                                        <p class="text-xs leading-5 text-subtle-light dark:text-subtle-dark">CSV up to
+                                            10MB</p>
+                                    </div>
+                                </div>
+                            </div>
+
+
+
+                            <!-- Submit -->
+                            <div class="flex justify-end pt-4">
+                                <button
+                                    class="bg-primary text-white font-bold py-3 px-6 rounded-lg hover:opacity-90 transition-opacity flex items-center gap-2"
+                                    type="submit">
+                                    <span class="material-symbols-outlined">file_upload</span>
+                                    Import Inventories
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </main>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+  <title>Know My Tow - Dealer Dashboard</title>
+  <link rel="shortcut icon" href="../assets/favicon.png" type="image/x-icon">
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <link href="https://fonts.googleapis.com" rel="preconnect" />
+  <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&amp;display=swap" rel="stylesheet" />
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script>
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            primary: "#66cd4f",
+            "background-light": "#f6f8f6",
+            "background-dark": "#142111",
+            "accent-green": "#5DC04A",
+          },
+          fontFamily: {
+            display: ["Inter"],
+          },
+          borderRadius: {
+            DEFAULT: "0.5rem",
+            lg: "1rem",
+            xl: "1.5rem",
+            full: "9999px",
+          },
+        },
+      },
+    };
+  </script>
+  <style>
+    .material-symbols-outlined {
+      font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 24;
+    }
+  </style>
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+</head>
+
+<body class="bg-background-light dark:bg-background-dark font-display text-background-dark dark:text-background-light">
+  <div class="flex min-h-screen w-full">
+    <aside
+      class="fixed top-0 left-0 h-screen w-64 bg-surface-light dark:bg-surface-dark border-r border-primary/20 dark:border-primary/30 bg-background-light dark:bg-background-dark">
+      <!-- Logo -->
+      <div class="p-4 flex justify-center">
+        <a href="">
+          <img class="w-40 h-auto" src="../assets/hyundai.png" 
+          alt="Know My Tow Logo">
+        </a>
+      </div>
+
+      <!-- Main Navigation -->
+      <nav class="flex-1 space-y-2 px-4">
+        <a href="dashboard.html"
+          class="flex items-center gap-3 rounded-lg px-3 py-2 text-background-dark dark:text-background-light transition-all hover:bg-primary/10 dark:hover:bg-primary/20 hover:text-primary">
+
+          <span class="material-symbols-outlined">dashboard</span>
+          Dashboard
+        </a>
+        <a class="flex items-center gap-3 rounded-lg px-3 py-2 text-background-dark dark:text-background-light transition-all hover:bg-primary/10 dark:hover:bg-primary/20 hover:text-primary"
+          href="inventory.html">
+          <span class="material-symbols-outlined">directions_car</span>
+          Car
+        </a>
+        <a class="flex items-center gap-3 rounded-lg px-3 py-2 text-background-dark dark:text-background-light transition-all hover:bg-primary/10 dark:hover:bg-primary/20 hover:text-primary"
+          href="leads.html">
+          <span class="material-symbols-outlined">groups</span>
+          Applicant
+        </a>
+
+        <a class="flex items-center gap-3 rounded-lg px-3 py-2 text-background-dark dark:text-background-light transition-all hover:bg-primary/10 dark:hover:bg-primary/20 hover:text-primary"
+          href="report/report.html">
+          <span class="material-symbols-outlined">assessment</span>
+          Application
+        </a>
+        <a class="flex items-center gap-3 rounded-lg px-3 py-2 text-background-dark dark:text-background-light transition-all hover:bg-primary/10 dark:hover:bg-primary/20 hover:text-primary"
+          href="plans.html">
+          <span class="material-symbols-outlined">star</span>
+          Plan
+        </a>
+        <a class="flex items-center gap-3 rounded-lg px-3 py-2 text-background-dark dark:text-background-light transition-all hover:bg-primary/10 dark:hover:bg-primary/20 hover:text-primary"
+          href="support.html">
+          <span class="material-symbols-outlined">support_agent</span>
+          Support
+        </a>
+        <a class="flex items-center gap-3 rounded-lg px-3 py-2 text-background-dark dark:text-background-light transition-all hover:bg-primary/10 dark:hover:bg-primary/20 hover:text-primary"
+          href="settings.html">
+          <span class="material-symbols-outlined">settings</span>
+          Settings
+        </a>
+
+        <!-- Help -->
+        <a class="flex items-center gap-3 rounded-lg px-3 py-2 text-background-dark dark:text-background-light transition-all hover:bg-primary/10 dark:hover:bg-primary/20 hover:text-primary"
+          href="help.html">
+          <span class="material-symbols-outlined">help</span>
+          Help
+        </a>
+      </nav>
+    </aside>
+
+    <div class="flex-1 flex flex-col ml-64 min-h-screen">
+      <header
+        class="flex items-center justify-end whitespace-nowrap border-b border-primary/20 dark:border-primary/30 px-6 sm:px-10 py-4 h-[77px]">
+        <div class="flex items-center gap-4">
+          <a href="notifications.html">
+            <button
+              class="flex h-10 w-10 cursor-pointer items-center justify-center rounded-full bg-primary/10 text-background-dark dark:text-background-light hover:bg-primary/20 dark:hover:bg-primary/30 transition-colors">
+              <span class="material-symbols-outlined"> notifications </span>
+            </button>
+          </a>
+          <div class="relative inline-block">
+            <!-- Profile Icon -->
+            <div id="profileBtn" class="w-8 h-8 bg-cover rounded-full cursor-pointer"
+              style="background-image: url('../assets/user.png');">
+            </div>
+
+            <!-- Popup -->
+            <div id="profilePopup"
+              class="hidden absolute right-0 mt-2 w-60 bg-white border rounded-lg shadow-lg p-4 z-50">
+              <div class="flex items-center space-x-3">
+                <img src="../assets/user.png" class="w-10 h-10 rounded-full" />
+                <div>
+                  <p class="font-semibold text-black">John Doe</p>
+                  <p class="text-sm text-gray-500">john@dow.com</p>
+                </div>
+              </div>
+              <hr class="my-3">
+              <p class="text-sm text-gray-700 pl-3">Dealer</p>
+              <a href="../dealer/login.html">
+                <button class="mt-2 w-full text-left text-black px-3 py-2 rounded-lg hover:bg-gray-100">Log out</button>
+              </a>
+            </div>
+            <script>
+              const btn = document.getElementById("profileBtn");
+              const popup = document.getElementById("profilePopup");
+
+              btn.addEventListener("click", () => {
+                popup.classList.toggle("hidden");
+              });
+              document.addEventListener("click", (e) => {
+                if (!btn.contains(e.target) && !popup.contains(e.target)) {
+                  popup.classList.add("hidden");
+                }
+              });
+            </script>
+          </div>
+        </div>
+      </header>
+      <main class="max-w-5xl mx-auto my-10 bg-white shadow-xl rounded-2xl p-10 space-y-8 mr-28">
+
+    <!-- Header -->
+    <header class="flex flex-col sm:flex-row justify-between items-start sm:items-center border-b pb-6 gap-6">
+      <!-- Left Side -->
+      <div class="space-y-1">
+        <h1 class="text-3xl font-bold text-gray-900">Ramesh R</h1>
+        <p class="text-gray-700"><span class="font-semibold">Mobile:</span> 0000000002</p>
+        <p class="text-gray-700"><span class="font-semibold">Address:</span> 23/1, Gandhi Street, Chennai, Tamil Nadu</p>
+      </div>
+
+      <!-- Right Side -->
+      <div class="text-right space-y-1">
+        <p class="text-gray-700"><span class="font-semibold">Loan Amount:</span> ₹500,000.00</p>
+        <p class="text-gray-700">
+          <span class="font-semibold">Status:</span>
+          <span class="text-green-600 font-semibold">Approved ✅</span>
+        </p>
+        <p class="text-gray-700"><span class="font-semibold">Vehicle:</span> Hyundai EXTER 1.2MT Kappa EX</p>
+      </div>
+    </header>
+
+    <!-- Executive Summary -->
+    <section>
+      <h2 class="text-2xl font-bold section-title mb-3">Executive Summary</h2>
+      <p class="leading-relaxed text-gray-700">
+        The loan application for <span class="font-semibold">Ramesh R</span> is
+        <span class="font-semibold text-green-600">APPROVED</span> for a new vehicle purchase.
+        The applicant demonstrates strong financial eligibility with an adequate Net Take Home (NTH)
+        after proposed EMI deductions and an acceptable Debt-to-Income Ratio (DTI).
+        The vehicle and loan terms are compliant with institutional policy standards.
+      </p>
+    </section>
+
+    <!-- Application Overview -->
+    <section>
+      <h2 class="text-2xl font-bold section-title mb-3">Application Overview</h2>
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-y-3 gap-x-10 text-gray-700">
+        <p><span class="font-semibold text-gray-900">Application No:</span> APP_0000000002</p>
+        <p><span class="font-semibold text-gray-900">Source of Income:</span> Salary</p>
+        <p><span class="font-semibold text-gray-900">PAN:</span> BQVPM6390P</p>
+      </div>
+    </section>
+
+    <!-- Financial Information -->
+    <section>
+      <h2 class="text-2xl font-bold section-title mb-3">Financial Information</h2>
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-y-3 gap-x-10 text-gray-700">
+        <p><span class="font-semibold text-gray-900">Gross Annual Income:</span> ₹1,500,000.00</p>
+        <p><span class="font-semibold text-gray-900">Monthly Salary:</span> ₹125,000.00</p>
+        <p><span class="font-semibold text-gray-900">Existing EMIs:</span> ₹79,707.36</p>
+      </div>
+    </section>
+
+    <!-- Vehicle Information -->
+    <section>
+      <h2 class="text-2xl font-bold section-title mb-3">Vehicle Information</h2>
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-y-3 gap-x-10 text-gray-700">
+        <p><span class="font-semibold text-gray-900">Vehicle Type:</span> New</p>
+        <p><span class="font-semibold text-gray-900">Vehicle Make:</span> Hyundai</p>
+        <p><span class="font-semibold text-gray-900">Vehicle Model:</span> EXTER 1.2MT Kappa EX</p>
+        <p><span class="font-semibold text-gray-900">Dealer Name:</span> PEEYESYEM HYUNDAI</p>
+        <p><span class="font-semibold text-gray-900">Cost of Vehicle:</span> ₹563,033.00</p>
+        <p><span class="font-semibold text-gray-900">Insurance:</span> ₹33,630.00</p>
+        <p><span class="font-semibold text-gray-900">Road Tax:</span> ₹75,644.00</p>
+        <p><span class="font-semibold text-gray-900">Total Cost:</span> ₹672,307.00</p>
+      </div>
+    </section>
+
+    <!-- Loan Assessment -->
+    <section>
+      <h2 class="text-2xl font-bold section-title mb-3">Loan Assessment</h2>
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-y-3 gap-x-10 text-gray-700">
+        <p><span class="font-semibold text-gray-900">Repayment Period:</span> 84 months</p>
+        <p><span class="font-semibold text-gray-900">Proposed EMI:</span> ₹7,868.05</p>
+        <p><span class="font-semibold text-gray-900">Existing EMIs:</span> ₹79,707.36</p>
+        <p><span class="font-semibold text-gray-900">Total EMI (Existing + Proposed):</span> ₹87,575.41</p>
+        <p><span class="font-semibold text-gray-900">Net Monthly Income:</span> ₹125,000.00</p>
+        <p><span class="font-semibold text-gray-900">Applicant NTH (After Proposed EMI):</span> ₹37,424.59</p>
+        <p><span class="font-semibold text-gray-900">Margin Eligibility:</span> Eligible with 10%</p>
+      </div>
+    </section>
+
+    <!-- Financial Eligibility -->
+    <section>
+      <h2 class="text-2xl font-bold section-title mb-3">Financial Eligibility</h2>
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-y-3 gap-x-10 text-gray-700">
+        <p><span class="font-semibold text-gray-900">Debt-to-Income Ratio (DTI):</span> 70.06%</p>
+        <p><span class="font-semibold text-gray-900">Minimum NTH Required:</span> ₹31,250.00</p>
+        <p><span class="font-semibold text-gray-900">Actual NTH after Proposed EMI:</span> ₹37,424.59</p>
+        <p><span class="font-semibold text-gray-900">Result:</span> <span class="text-green-600 font-bold">✅ Eligible</span></p>
+      </div>
+    </section>
+
+  </main>
+    </div>
+  </div>
+  <script>
+    const ctx = document.getElementById("leadStatusChart").getContext("2d");
+    const leadStatusChart = new Chart(ctx, {
+      type: "doughnut",
+      data: {
+        labels: ["New", "Contacted", "Closed", "Unqualified"],
+        datasets: [
+          {
+            label: "Lead Status",
+            data: [20, 15, 8, 2],
+            backgroundColor: [
+              "#5DC04A", // accent-green
+              "#66cd4f", // primary
+              "#36A2EB",
+              "#FF6384",
+            ],
+            borderColor: tailwind.config.theme.extend.colors["background-light"],
+            borderWidth: 2,
+          },
+        ],
+      },
+      options: {
+        responsive: true,
+        plugins: {
+          legend: {
+            position: "top",
+            labels: {
+              color: document.body.classList.contains("dark") ? "#f6f8f6" : "#142111",
+            }
+          },
+        },
+      },
+    });
+  </script>
+
+</body>
+
+</html>

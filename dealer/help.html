@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+  <title>Know My Tow - Help</title>
+  <link rel="shortcut icon" href="../assets/favicon.png" type="image/x-icon">
+  <link href="data:image/x-icon;base64," rel="icon" type="image/x-icon" />
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <link href="https://fonts.googleapis.com" rel="preconnect" />
+  <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&amp;display=swap" rel="stylesheet" />
+  <script>
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            primary: "#66cd4f",
+            "background-light": "#f6f8f6",
+            "background-dark": "#142111",
+            "accent-green": "#5DC04A",
+          },
+          fontFamily: {
+            display: ["Inter"],
+          },
+          borderRadius: {
+            DEFAULT: "0.5rem",
+            lg: "1rem",
+            xl: "1.5rem",
+            full: "9999px",
+          },
+        },
+      },
+    };
+  </script>
+  <style>
+    .material-symbols-outlined {
+      font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 24;
+    }
+  </style>
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+</head>
+
+<body class="bg-background-light dark:bg-background-dark font-display text-background-dark dark:text-background-light">
+  <div class="flex min-h-screen w-full">
+    <!-- Sidebar -->
+    <aside
+      class="fixed top-0 left-0 h-screen w-64 bg-surface-light dark:bg-surface-dark border-r border-primary/20 dark:border-primary/30 bg-background-light dark:bg-background-dark">
+      <!-- Logo -->
+      <div class="p-4 flex justify-center">
+        <a href="">
+          <img class="w-40 h-auto" src="../assets/hyundai.png" 
+          alt="Know My Tow Logo">
+        </a>
+      </div>
+
+      <!-- Main Navigation -->
+      <nav class="flex-1 space-y-2 px-4">
+        <a href="dashboard.html"
+          class="flex items-center gap-3 rounded-lg px-3 py-2 text-background-dark dark:text-background-light transition-all hover:bg-primary/10 dark:hover:bg-primary/20 hover:text-primary">
+
+          <span class="material-symbols-outlined">dashboard</span>
+          Dashboard
+        </a>
+        <a class="flex items-center gap-3 rounded-lg px-3 py-2 text-background-dark dark:text-background-light transition-all hover:bg-primary/10 dark:hover:bg-primary/20 hover:text-primary"
+          href="inventory.html">
+          <span class="material-symbols-outlined">directions_car</span>
+          Car
+        </a>
+        <a class="flex items-center gap-3 rounded-lg px-3 py-2 text-background-dark dark:text-background-light transition-all hover:bg-primary/10 dark:hover:bg-primary/20 hover:text-primary"
+          href="leads.html">
+          <span class="material-symbols-outlined">groups</span>
+          Applicant
+        </a>
+
+        <a class="flex items-center gap-3 rounded-lg px-3 py-2 text-background-dark dark:text-background-light transition-all hover:bg-primary/10 dark:hover:bg-primary/20 hover:text-primary"
+          href="report/report.html">
+          <span class="material-symbols-outlined">assessment</span>
+          Application
+        </a>
+        <a class="flex items-center gap-3 rounded-lg px-3 py-2 text-background-dark dark:text-background-light transition-all hover:bg-primary/10 dark:hover:bg-primary/20 hover:text-primary"
+          href="plans.html">
+          <span class="material-symbols-outlined">star</span>
+          Plan
+        </a>
+        <a class="flex items-center gap-3 rounded-lg px-3 py-2 text-background-dark dark:text-background-light transition-all hover:bg-primary/10 dark:hover:bg-primary/20 hover:text-primary"
+          href="support.html">
+          <span class="material-symbols-outlined">support_agent</span>
+          Support
+        </a>
+        <a class="flex items-center gap-3 rounded-lg px-3 py-2 text-background-dark dark:text-background-light transition-all hover:bg-primary/10 dark:hover:bg-primary/20 hover:text-primary"
+          href="settings.html">
+          <span class="material-symbols-outlined">settings</span>
+          Settings
+        </a>
+
+        <!-- Help -->
+        <a class="flex items-center gap-3 rounded-md px-3 py-2 text-white bg-gradient-to-r from-[#66cd4f] to-[#93dc84] hover:from-[#57b843] hover:to-[#7fcf6e] transition-all"
+          href="help.html">
+          <span class="material-symbols-outlined">help</span>
+          Help
+        </a>
+      </nav>
+    </aside>
+
+    <!-- Main Content -->
+    <div class="flex-1 flex flex-col ml-64 min-h-screen">
+      <!-- Header -->
+      <header
+        class="flex items-center justify-end whitespace-nowrap border-b border-primary/20 dark:border-primary/30 px-6 sm:px-10 py-4 h-[77px]">
+        <div class="flex items-center gap-4">
+          <a href="notifications.html">
+            <button
+              class="flex h-10 w-10 cursor-pointer items-center justify-center rounded-full bg-primary/10 text-background-dark dark:text-background-light hover:bg-primary/20 dark:hover:bg-primary/30 transition-colors">
+              <span class="material-symbols-outlined"> notifications </span>
+            </button>
+          </a>
+          <div class="relative inline-block">
+            <!-- Profile Icon -->
+            <div id="profileBtn" class="w-8 h-8 bg-cover rounded-full cursor-pointer"
+              style="background-image: url('../assets/user.png');">
+            </div>
+
+            <!-- Popup -->
+            <div id="profilePopup"
+              class="hidden absolute right-0 mt-2 w-60 bg-white border rounded-lg shadow-lg p-4 z-50">
+              <div class="flex items-center space-x-3">
+                <img src="../assets/user.png" class="w-10 h-10 rounded-full" />
+                <div>
+                  <p class="font-semibold text-black">John Doe</p>
+                  <p class="text-sm text-gray-500">john@dow.com
+                </div>
+              </div>
+              <hr class="my-3">
+              <p class="text-sm text-gray-700 pl-3">Dealer</p>
+              <a href="../dealer/login.html">
+                <button class="mt-2 w-full text-left text-black px-3 py-2 rounded-lg hover:bg-gray-100">Log
+                  out</button>
+              </a>
+            </div>
+            <script>
+              const btn = document.getElementById("profileBtn");
+              const popup = document.getElementById("profilePopup");
+
+              btn.addEventListener("click", () => {
+                popup.classList.toggle("hidden");
+              });
+              document.addEventListener("click", (e) => {
+                if (!btn.contains(e.target) && !popup.contains(e.target)) {
+                  popup.classList.add("hidden");
+                }
+              });
+            </script>
+          </div>
+        </div>
+      </header>
+
+      <!-- Help Content -->
+      <main class="flex-1 px-4 py-8 sm:px-6 lg:px-12">
+        <div class="mx-auto max-w-4xl">
+          <!-- Title -->
+          <header class="mb-10 text-center">
+            <h1 class="text-3xl lg:text-5xl font-extrabold mb-2">How can we help?</h1>
+            <p class="text-lg text-gray-600 dark:text-gray-400">Find answers to your questions below.</p>
+          </header>
+
+          <!-- Search -->
+          <div class="mb-12">
+            <div class="relative">
+              <span
+                class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-gray-400 dark:text-gray-500">
+                search
+              </span>
+              <input type="search" placeholder="Search for help..."
+                class="w-full h-14 pl-12 pr-4 rounded-lg border border-gray-300 dark:border-gray-700 bg-white dark:bg-background-dark text-background-dark dark:text-background-light placeholder-gray-400 dark:placeholder-gray-500 focus:ring-2 focus:ring-primary focus:border-primary transition-colors" />
+            </div>
+          </div>
+
+          <!-- FAQ -->
+          <div>
+            <h2 class="text-2xl font-bold mb-6">Frequently Asked Questions</h2>
+            <div class="space-y-4">
+              <!-- FAQ Item -->
+              <details
+                class="group border border-primary/20 dark:border-primary/30 rounded-lg overflow-hidden bg-background-light dark:bg-background-dark hover:border-primary/50 transition-all">
+                <summary class="flex cursor-pointer items-center justify-between p-5 list-none">
+                  <h3 class="text-base font-medium">How do I add a new vehicle?</h3>
+                  <span
+                    class="material-symbols-outlined text-gray-500 dark:text-gray-400 group-open:rotate-180 transition-transform">expand_more</span>
+                </summary>
+                <div class="px-5 pb-5 pt-2 text-sm text-gray-600 dark:text-gray-400">
+                  <p>To add a new vehicle, navigate to your Dashboard and click the 'Add Vehicle' button. You'll be
+                    prompted to enter the vehicle's details such as make, model, year, and VIN. Once you've filled out
+                    the required information, click 'Save'.</p>
+                </div>
+              </details>
+
+              <details
+                class="group border border-primary/20 dark:border-primary/30 rounded-lg overflow-hidden bg-background-light dark:bg-background-dark hover:border-primary/50 transition-all">
+                <summary class="flex cursor-pointer items-center justify-between p-5 list-none">
+                  <h3 class="text-base font-medium">How do I manage my Car?</h3>
+                  <span
+                    class="material-symbols-outlined text-gray-500 dark:text-gray-400 group-open:rotate-180 transition-transform">expand_more</span>
+                </summary>
+                <div class="px-5 pb-5 pt-2 text-sm text-gray-600 dark:text-gray-400">
+                  <p>Your car can be managed from the 'Dashboard'. Here you can view all vehicles, edit their
+                    details, or remove them. Use filters and search to find vehicles quickly.</p>
+                </div>
+              </details>
+
+              <details
+                class="group border border-primary/20 dark:border-primary/30 rounded-lg overflow-hidden bg-background-light dark:bg-background-dark hover:border-primary/50 transition-all">
+                <summary class="flex cursor-pointer items-center justify-between p-5 list-none">
+                  <h3 class="text-base font-medium">How do I search for a vehicle?</h3>
+                  <span
+                    class="material-symbols-outlined text-gray-500 dark:text-gray-400 group-open:rotate-180 transition-transform">expand_more</span>
+                </summary>
+                <div class="px-5 pb-5 pt-2 text-sm text-gray-600 dark:text-gray-400">
+                  <p>Go to the 'Search' page. You can search by VIN, make, model, or year. Advanced filters let you
+                    refine results for faster lookup.</p>
+                </div>
+              </details>
+
+              <details
+                class="group border border-primary/20 dark:border-primary/30 rounded-lg overflow-hidden bg-background-light dark:bg-background-dark hover:border-primary/50 transition-all">
+                <summary class="flex cursor-pointer items-center justify-between p-5 list-none">
+                  <h3 class="text-base font-medium">How do I update my profile?</h3>
+                  <span
+                    class="material-symbols-outlined text-gray-500 dark:text-gray-400 group-open:rotate-180 transition-transform">expand_more</span>
+                </summary>
+                <div class="px-5 pb-5 pt-2 text-sm text-gray-600 dark:text-gray-400">
+                  <p>Click your profile picture in the top-right corner and select 'Profile Settings'. You can update
+                    your details, password, and contact info there.</p>
+                </div>
+              </details>
+
+              <details
+                class="group border border-primary/20 dark:border-primary/30 rounded-lg overflow-hidden bg-background-light dark:bg-background-dark hover:border-primary/50 transition-all">
+                <summary class="flex cursor-pointer items-center justify-between p-5 list-none">
+                  <h3 class="text-base font-medium">How do I contact support?</h3>
+                  <span
+                    class="material-symbols-outlined text-gray-500 dark:text-gray-400 group-open:rotate-180 transition-transform">expand_more</span>
+                </summary>
+                <div class="px-5 pb-5 pt-2 text-sm text-gray-600 dark:text-gray-400">
+                  <p>You can reach our team via the 'Support' link in the sidebar, or email support@knowmytow.com. We
+                    aim to reply within 24 hours.</p>
+                </div>
+              </details>
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
+  </div>
+</body>
+
+</html>

@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+  <title>Know My Tow - Dealer Profile</title>
+  <link rel="shortcut icon" href="../assets/favicon.png" type="image/x-icon">
+  <link href="data:image/x-icon;base64," rel="icon" type="image/x-icon" />
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <link href="https://fonts.googleapis.com" rel="preconnect" />
+  <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+  <script>
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            primary: "#66cd4f",
+            "background-light": "#f6f8f6",
+            "background-dark": "#142111",
+            "accent-green": "#5DC04A",
+          },
+          fontFamily: {
+            display: ["Inter"],
+          },
+          borderRadius: {
+            DEFAULT: "0.5rem",
+            lg: "1rem",
+            xl: "1.5rem",
+            full: "9999px",
+          },
+        },
+      },
+    };
+  </script>
+  <style>
+    .material-symbols-outlined {
+      font-variation-settings:
+        "FILL" 0,
+        "wght" 400,
+        "GRAD" 0,
+        "opsz" 24;
+    }
+
+    .form-select {
+      background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3e%3cpath stroke='%236b7280' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='M6 8l4 4 4-4'/%3e%3c/svg%3e");
+      background-position: right 0.5rem center;
+      background-repeat: no-repeat;
+      background-size: 1.5em 1.5em;
+      padding-right: 2.5rem;
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+  </style>
+</head>
+
+<body class="bg-background-light dark:bg-background-dark font-display text-background-dark dark:text-background-light">
+  <div class="flex min-h-screen w-full">
+    <!-- Sidebar -->
+    <aside
+      class="fixed top-0 left-0 h-screen w-64 bg-surface-light dark:bg-surface-dark">
+      <!-- Logo -->
+      <div class="p-4 flex justify-center">
+        <a href="">
+          <img class="w-40 h-auto" src="../assets/hyundai.png" 
+          alt="Know My Tow Logo">
+        </a>
+      </div>
+
+      <!-- Main Navigation -->
+      <nav class="flex-1 space-y-2 px-4">
+        <a href="dashboard.html"
+          class="flex items-center gap-3 rounded-lg px-3 py-2 text-background-dark dark:text-background-light transition-all hover:bg-primary/10 dark:hover:bg-primary/20 hover:text-primary">
+
+          <span class="material-symbols-outlined">dashboard</span>
+          Dashboard
+        </a>
+        <a class="flex items-center gap-3 rounded-lg px-3 py-2 text-background-dark dark:text-background-light transition-all hover:bg-primary/10 dark:hover:bg-primary/20 hover:text-primary"
+          href="inventory.html">
+          <span class="material-symbols-outlined">directions_car</span>
+          Car
+        </a>
+        <a class="flex items-center gap-3 rounded-lg px-3 py-2 text-background-dark dark:text-background-light transition-all hover:bg-primary/10 dark:hover:bg-primary/20 hover:text-primary"
+          href="leads.html">
+          <span class="material-symbols-outlined">groups</span>
+          Applicant
+        </a>
+
+        <a class="flex items-center gap-3 rounded-lg px-3 py-2 text-background-dark dark:text-background-light transition-all hover:bg-primary/10 dark:hover:bg-primary/20 hover:text-primary"
+          href="report/report.html">
+          <span class="material-symbols-outlined">assessment</span>
+          Application
+        </a>
+        <a class="flex items-center gap-3 rounded-lg px-3 py-2 text-background-dark dark:text-background-light transition-all hover:bg-primary/10 dark:hover:bg-primary/20 hover:text-primary"
+          href="plans.html">
+          <span class="material-symbols-outlined">star</span>
+          Plan
+        </a>
+        <a class="flex items-center gap-3 rounded-lg px-3 py-2 text-background-dark dark:text-background-light transition-all hover:bg-primary/10 dark:hover:bg-primary/20 hover:text-primary"
+          href="support.html">
+          <span class="material-symbols-outlined">support_agent</span>
+          Support
+        </a>
+        <a class="flex items-center gap-3 rounded-md px-3 py-2 text-white bg-gradient-to-r from-[#66cd4f] to-[#93dc84] hover:from-[#57b843] hover:to-[#7fcf6e] transition-all"
+          href="settings.html">
+          <span class="material-symbols-outlined">settings</span>
+          Settings
+        </a>
+
+        <!-- Help -->
+        <a class="flex items-center gap-3 rounded-lg px-3 py-2 text-background-dark dark:text-background-light transition-all hover:bg-primary/10 dark:hover:bg-primary/20 hover:text-primary"
+          href="help.html">
+          <span class="material-symbols-outlined">help</span>
+          Help
+        </a>
+      </nav>
+    </aside>
+
+    <!-- Main Content -->
+    <div class="flex flex-1 flex-col">
+      <!-- Header -->
+      <header
+        class="flex items-center justify-end border-b border-primary/20 dark:border-primary/30 px-6 sm:px-10 py-4 h-[77px]">
+        <div class="flex items-center gap-4">
+          <a href="notifications.html">
+            <button
+              class="flex h-10 w-10 cursor-pointer items-center justify-center rounded-full bg-primary/10 text-background-dark dark:text-background-light hover:bg-primary/20 dark:hover:bg-primary/30 transition-colors">
+              <span class="material-symbols-outlined"> notifications </span>
+            </button>
+          </a>
+          <div class="relative inline-block">
+            <!-- Profile Icon -->
+            <div id="profileBtn" class="w-8 h-8 bg-cover rounded-full cursor-pointer"
+              style="background-image: url('../assets/user.png');">
+            </div>
+
+            <!-- Popup -->
+            <div id="profilePopup"
+              class="hidden absolute right-0 mt-2 w-60 bg-white border rounded-lg shadow-lg p-4 z-50">
+              <div class="flex items-center space-x-3">
+                <img src="../assets/user.png" class="w-10 h-10 rounded-full" />
+                <div>
+                  <p class="font-semibold text-black">John Doe</p>
+                  <p class="text-sm text-gray-500">john@dow.com</p>
+                </div>
+              </div>
+              <hr class="my-3">
+              <p class="text-sm text-gray-700 pl-3">Dealer</p>
+              <a href="../dealer/login.html">
+                <button class="mt-2 w-full text-left text-black px-3 py-2 rounded-lg hover:bg-gray-100">Log
+                  out</button>
+              </a>
+            </div>
+            <script>
+              const btn = document.getElementById("profileBtn");
+              const popup = document.getElementById("profilePopup");
+
+              btn.addEventListener("click", () => {
+                popup.classList.toggle("hidden");
+              });
+              document.addEventListener("click", (e) => {
+                if (!btn.contains(e.target) && !popup.contains(e.target)) {
+                  popup.classList.add("hidden");
+                }
+              });
+            </script>
+          </div>
+        </div>
+      </header>
+
+      <!-- Dealer Profile Content -->
+      <main class="flex-1 px-4 py-8 sm:px-6 lg:px-12">
+        <div class="mx-auto max-w-5xl">
+          <!-- Title -->
+          <div class="mb-8 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
+            <!-- Left side -->
+            <div>
+              <h2 class="text-3xl font-bold">Settings</h2>
+              <p class="mt-2 text-gray-600 dark:text-gray-400">Manage your account settings and preferences.</p>
+            </div>
+          </div>
+
+          <!-- Tabs Navigation -->
+          <div class="flex w-full max-w-md rounded-full bg-gray-100 dark:bg-neutral-800 p-1 mb-8">
+            <a href="settings.html" class="flex-1 text-center px-4 py-2 rounded-full text-sm font-medium 
+  transition-all text-gray-700 dark:text-gray-300 hover:text-green-500">
+              User Profile
+            </a>
+            <a href="dealer_profile.html" class="flex-1 text-center px-4 py-2 rounded-full text-sm font-medium 
+  transition-all bg-primary text-white">
+              Dealer Profile
+            </a>
+          </div>
+
+          <!-- Profile Form -->
+          <div
+            class="bg-background-light dark:bg-background-dark border border-primary/20 dark:border-primary/30 p-8 rounded-lg shadow-sm">
+            <form class="space-y-6">
+              <div>
+                <label class="block text-sm font-medium mb-2" for="dealer-name">Dealer Name</label>
+                <input id="dealer-name" type="text" value="Hyundai Capital Motors"
+                  class="form-input w-full bg-background-light dark:bg-neutral-800 border border-primary/20 dark:border-primary/30 rounded-lg focus:ring-primary focus:border-primary py-3 px-4" />
+              </div>
+              <div>
+                <label class="block text-sm font-medium mb-2" for="address">Address</label>
+                <input id="address" type="text" value="Anna Salai, Chennai, Tamil Nadu"
+                  class="form-input w-full bg-background-light dark:bg-neutral-800 border border-primary/20 dark:border-primary/30 rounded-lg focus:ring-primary focus:border-primary py-3 px-4" />
+              </div>
+              <div>
+                <label class="block text-sm font-medium mb-2" for="phone">Phone Number</label>
+                <input id="phone" type="tel" placeholder="+91"
+                  class="form-input w-full bg-background-light dark:bg-neutral-800 border border-primary/20 dark:border-primary/30 rounded-lg focus:ring-primary focus:border-primary py-3 px-4" />
+              </div>
+              <div>
+                <label class="block text-sm font-medium mb-2" for="email">Email</label>
+                <input id="email" type="email" placeholder="contact@yourdealership.com"
+                  class="form-input w-full bg-background-light dark:bg-neutral-800 border border-primary/20 dark:border-primary/30 rounded-lg focus:ring-primary focus:border-primary py-3 px-4" />
+              </div>
+              <div>
+                <label class="block text-sm font-medium mb-2" for="website">Website</label>
+                <input id="website" type="url" placeholder="https://yourdealership.com"
+                  class="form-input w-full bg-background-light dark:bg-neutral-800 border border-primary/20 dark:border-primary/30 rounded-lg focus:ring-primary focus:border-primary py-3 px-4" />
+              </div>
+
+              <!-- Logo Upload -->
+              <div>
+                <p class="text-sm font-medium mb-2">Logo</p>
+                <div class="flex items-center gap-4">
+                  <img src="../assets/user.png" class="h-10 w-auto" alt="">
+                  <label for="logo-upload"
+                    class="cursor-pointer px-4 py-2 rounded-lg border border-primary/20 dark:border-primary/30 bg-white dark:bg-neutral-800 text-sm font-medium hover:bg-gray-50 dark:hover:bg-neutral-700 transition-colors">
+                    Change
+                    <input class="sr-only" id="logo-upload" name="logo-upload" type="file" />
+                  </label>
+                  <button type="button"
+                    class="text-sm font-medium text-gray-500 hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-200">
+                    Remove
+                  </button>
+                </div>
+              </div>
+
+              <!-- Theme Color -->
+              <div>
+                <label for="theme-color" class="block text-sm font-medium mb-2">Theme Color</label>
+                <select id="theme-color"
+                  class="form-select w-full bg-background-light dark:bg-neutral-800 border border-primary/20 dark:border-primary/30 rounded-lg focus:ring-primary focus:border-primary py-3 px-4">
+                  <option selected>Green (Default)</option>
+                  <option>Blue</option>
+                  <option>Red</option>
+                  <option>Purple</option>
+                </select>
+              </div>
+
+              <!-- Actions -->
+              <div class="pt-4 flex flex-col sm:flex-row sm:justify-end gap-4">
+                <a href="settings.html">
+                  <button type="button"
+                    class="w-full sm:w-auto px-6 py-2.5 rounded-lg bg-gray-200 dark:bg-neutral-800 text-sm font-medium hover:bg-gray-300 dark:hover:bg-neutral-700 transition-colors">
+                    Cancel
+                  </button>
+                </a>
+                <a href="settings.html">
+                  <button type="submit"
+                    class="w-full sm:w-auto px-6 py-2.5 rounded-lg bg-primary text-white font-bold text-sm hover:opacity-90 transition-opacity">
+                    Save Changes
+                  </button>
+                </a>
+              </div>
+            </form>
+          </div>
+        </div>
+      </main>
+    </div>
+  </div>
+</body>
+
+</html>

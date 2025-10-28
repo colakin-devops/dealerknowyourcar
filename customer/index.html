@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Know My Tow - Caravans</title>
+    <link rel="shortcut icon" href="../assets/favicon.png" type="image/x-icon">
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;700;800&amp;display=swap"
+        rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+    <script>tailwind.config = { darkMode: "class", theme: { extend: { colors: { primary: "#66cd4f", "background-light": "#f6f8f6", "background-dark": "#152111" }, fontFamily: { display: "Plus Jakarta Sans" }, borderRadius: { DEFAULT: "0.5rem", lg: "1rem", xl: "1.5rem", full: "9999px" } } } };</script>
+    <style>
+        .material-symbols-outlined {
+            font-variation-settings:
+                'FILL' 0,
+                'wght' 400,
+                'GRAD' 0,
+                'opsz' 24
+        }
+    </style>
+</head>
+
+<body class="bg-background-light dark:bg-background-dark font-display text-zinc-900 dark:text-zinc-200">
+    <div class="flex flex-col min-h-screen">
+        <header
+            class="sticky top-0 z-10 bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-sm border-b border-zinc-200 dark:border-zinc-800">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="flex items-center justify-between h-16">
+                    <div class="flex items-center gap-4">
+                        <img class="w-32 h-auto" src="../assets/logo.png">
+                    </div>
+                    <div class="flex items-center gap-4">
+                        <button
+                            class="px-4 py-2 text-sm font-bold rounded-full bg-primary text-white hover:bg-primary/90 transition-colors">
+                            Log In
+                        </button>
+                        <button
+                            class="md:hidden p-2 rounded-full text-zinc-600 dark:text-zinc-400 hover:bg-zinc-200 dark:hover:bg-zinc-800">
+                            <span class="material-symbols-outlined">menu</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <main class="flex-grow container mx-auto px-4 sm:px-6 lg:px-8 py-8">
+            <div class="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-6 mb-8">
+                <h2 class="text-3xl font-extrabold text-zinc-900 dark:text-white">Caravans</h2>
+                <div class="relative w-full lg:max-w-md">
+                    <span
+                        class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-zinc-400 dark:text-zinc-500">search</span>
+                    <input
+                        class="w-full pl-12 pr-4 py-3 rounded-full bg-zinc-100 dark:bg-zinc-800 border-transparent focus:ring-2 focus:ring-primary focus:border-transparent text-zinc-900 dark:text-white placeholder-zinc-500 dark:placeholder-zinc-400"
+                        placeholder="Search for caravans by name, berth, etc." type="search" />
+                </div>
+            </div>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
+                <div
+                    class="bg-background-light dark:bg-zinc-900/50 rounded-lg overflow-hidden shadow-md hover:shadow-xl transition-shadow duration-300 group">
+                    <div class="relative">
+                        <img alt="Swift Basecamp 4" class="w-full h-48 object-cover"
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuDBU7CjET1Fir2INU1oUpvAK77MoxNIN4ZZu7FCA1B0jZtSmdRP2KmkC8vjElEBg7dwk7HxcERhTnPvWHv3V0WTcK-QSmq3ze762t6jVWLkyN95ZxKZtjXEh8Z96_AxKK7HxW7cG3hYgBc6DUYip2uAfJOppsd1sFOYHhIhaI7o_ihzYLmSJSVdZcXF9uO728-L4_VU9MIbxoMfyO_v9xuklfCuf9ANWPdCU3EYH6SRz0_8_HPptc1TQjyIpcZTryYCbc19mm9GIpg" />
+                        <div
+                            class="absolute top-2 left-2 bg-primary/10 dark:bg-primary/20 text-primary text-xs font-bold px-2 py-1 rounded-full">
+                            From Main Dealer</div>
+                    </div>
+                    <div class="p-4 flex flex-col flex-grow">
+                        <h3 class="text-lg font-bold text-zinc-900 dark:text-white mb-1">Swift Basecamp 4</h3>
+                        <p class="text-sm text-zinc-600 dark:text-zinc-400 mb-4">4 Berth • 1200kg MTPLM</p>
+                        <a href="caravan_details.html">
+                            <button
+                                class="mt-auto w-full px-4 py-2 text-sm font-bold rounded-full bg-primary/10 dark:bg-primary/20 text-primary group-hover:bg-primary group-hover:text-white transition-colors duration-300">
+                                View Details
+                            </button>
+                        </a>
+                    </div>
+                </div>
+                <div
+                    class="bg-background-light dark:bg-zinc-900/50 rounded-lg overflow-hidden shadow-md hover:shadow-xl transition-shadow duration-300 group">
+                    <div class="relative">
+                        <img alt="Bailey Discovery D4-4" class="w-full h-48 object-cover"
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuDBOf8YSo18_FWlag2l_5IvgbGUy1cUD45Ic3YTXI7C3WlK0jUUTR2xYICmQYvjIA7BfxbxFzGj8ifk9Bp_y1zoXV6FD9vHXCXzBiy16kDKdRA1eAmZI55ssZma35-kDpid7JO8nGodsx0x7gnHif8jQmqK8Tk8xiLcbkmTTfb92-xSkmkX0WvvWVRgg9xkg862GC9IlqVNCXAGEo4MdEiGrph3GFRSBnn5QtL4QqYXvOnkZqs9LfLNtnYCBfjdfHP_S3cDvFxKqAo" />
+                        <div
+                            class="absolute top-2 left-2 bg-primary/10 dark:bg-primary/20 text-primary text-xs font-bold px-2 py-1 rounded-full">
+                            From Main Dealer</div>
+                    </div>
+                    <div class="p-4 flex flex-col flex-grow">
+                        <h3 class="text-lg font-bold text-zinc-900 dark:text-white mb-1">Bailey Discovery D4-4</h3>
+                        <p class="text-sm text-zinc-600 dark:text-zinc-400 mb-4">4 Berth • 1300kg MTPLM</p>
+                        <a href="caravan_details.html">
+                            <button
+                                class="mt-auto w-full px-4 py-2 text-sm font-bold rounded-full bg-primary/10 dark:bg-primary/20 text-primary group-hover:bg-primary group-hover:text-white transition-colors duration-300">
+                                View Details
+                            </button>
+                        </a>
+                    </div>
+                </div>
+                <div
+                    class="bg-background-light dark:bg-zinc-900/50 rounded-lg overflow-hidden shadow-md hover:shadow-xl transition-shadow duration-300 group">
+                    <div class="relative">
+                        <img alt="Elddis Xplore 304" class="w-full h-48 object-cover"
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuB1Qi7q6ZxIFCRC-yUQmFYJ9o0sui9TQs2jTUpuW0kIK7baEuBvzybKvwBp0b9nCeh8W2ond_Js4L3efLBR1NQXzDPY7QI6G_d29Aq1uKD8uSiaHJZ6G6vGnEat37K5wym6Sa0obFUIGOGZZvA_P21Mrp-TschPB9AIQVKUV6X0VASvPUzcTMFEYXQwSvhlQlHxQOVvgFVVHenIn5RVLoB5ExYcwVQSQ7fGO3xeOkRpX1Zs4zuMF1LDGfDAn_UEOLMHANL0NRGuoL4" />
+                        <div
+                            class="absolute top-2 left-2 bg-primary/10 dark:bg-primary/20 text-primary text-xs font-bold px-2 py-1 rounded-full">
+                            From Approved Dealer</div>
+                    </div>
+                    <div class="p-4 flex flex-col flex-grow">
+                        <h3 class="text-lg font-bold text-zinc-900 dark:text-white mb-1">Elddis Xplore 304</h3>
+                        <p class="text-sm text-zinc-600 dark:text-zinc-400 mb-4">4 Berth • 1100kg MTPLM</p>
+                        <a href="caravan_details.html">
+                            <button
+                                class="mt-auto w-full px-4 py-2 text-sm font-bold rounded-full bg-primary/10 dark:bg-primary/20 text-primary group-hover:bg-primary group-hover:text-white transition-colors duration-300">
+                                View Details
+                            </button>
+                        </a>
+                    </div>
+                </div>
+                <div
+                    class="bg-background-light dark:bg-zinc-900/50 rounded-lg overflow-hidden shadow-md hover:shadow-xl transition-shadow duration-300 group">
+                    <div class="relative">
+                        <img alt="Lunar Quasar 546" class="w-full h-48 object-cover"
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuAshcxlqmWOjnXFHy3sXAWkdK_RgRueFU9Czs4SK8pwv2lDgwukR__Qi2MexUkBSs_21ZosTQUD9nBs_NN-B5mUF-OcON8CcAd_QgBnMOFPqDUe1dANEFSngLm-eirLV3FIs-qS2wGOZWyXIx8ZhxYAxiOQzN9RYhNVkRl21ctqsI1e93Rag5R2vrJpwXz0hY-Xo0MSRuQOXEAjlFOmYW_UsvjzMlzz5rHhQjQix3PqoX0KE5KnMumiP4em4gwCYVtCqbG8-e9m_kc" />
+                        <div
+                            class="absolute top-2 left-2 bg-primary/10 dark:bg-primary/20 text-primary text-xs font-bold px-2 py-1 rounded-full">
+                            From Main Dealer</div>
+                    </div>
+                    <div class="p-4 flex flex-col flex-grow">
+                        <h3 class="text-lg font-bold text-zinc-900 dark:text-white mb-1">Lunar Quasar 546</h3>
+                        <p class="text-sm text-zinc-600 dark:text-zinc-400 mb-4">6 Berth • 1500kg MTPLM</p>
+                        <a href="caravan_details.html">
+                            <button
+                                class="mt-auto w-full px-4 py-2 text-sm font-bold rounded-full bg-primary/10 dark:bg-primary/20 text-primary group-hover:bg-primary group-hover:text-white transition-colors duration-300">
+                                View Details
+                            </button>
+                        </a>
+                    </div>
+                </div>
+                <div
+                    class="bg-background-light dark:bg-zinc-900/50 rounded-lg overflow-hidden shadow-md hover:shadow-xl transition-shadow duration-300 group">
+                    <div class="relative">
+                        <img alt="Swift Basecamp 4" class="w-full h-48 object-cover"
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuCoJMm8_l4SjqarengHMWEZix3AIKhsy4-qdz1TAP5mAUVpiA1eNPJpbiLzc64m6a6sPlkXpixfhq9nwunwKRZqbZWpgVFM6Mhdx4JPYzmuexAzAu1MLKDuEQRWzo1Wiub3gcWipw6UYrj-5yGRf9Rf7RXwBCEcqvFd4WWYC91qM2TzKCKANjkZXgr-RUahnMCSA9UhaefKLXggPgjSmEtQxmoiheHhXKxZ4U_l-mY3V-gTYmuUUTSiX_GZADv1bJF2EbmlEGMXT5g" />
+                        <div
+                            class="absolute top-2 left-2 bg-primary/10 dark:bg-primary/20 text-primary text-xs font-bold px-2 py-1 rounded-full">
+                            From Main Dealer</div>
+                    </div>
+                    <div class="p-4 flex flex-col flex-grow">
+                        <h3 class="text-lg font-bold text-zinc-900 dark:text-white mb-1">Adria Altea</h3>
+                        <p class="text-sm text-zinc-600 dark:text-zinc-400 mb-4">4 Berth • 1350kg MTPLM</p>
+                        <a href="caravan_details.html">
+                            <button
+                                class="mt-auto w-full px-4 py-2 text-sm font-bold rounded-full bg-primary/10 dark:bg-primary/20 text-primary group-hover:bg-primary group-hover:text-white transition-colors duration-300">
+                                View Details
+                            </button>
+                        </a>
+                    </div>
+                </div>
+                <div
+                    class="bg-background-light dark:bg-zinc-900/50 rounded-lg overflow-hidden shadow-md hover:shadow-xl transition-shadow duration-300 group">
+                    <div class="relative">
+                        <img alt="Bailey Discovery D4-4" class="w-full h-48 object-cover"
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuB7cInnUFKnWoJjMh7zOG3GCUVfrlyw4pBbe6d1ue4qGb0Xvmh9V8mkAMuzX3XI95cTFl26NcGb1Z5F7KW-7pr4wL16MLa8tj57w5BSF74Viao1TeO7g4kmPmoBuMYAY3D47GA6BoPM2wF4rzd8PHJcDQxexVTWhKwVxQWkSBXd6KDIpLHacmSqdlQNqgj41L8DX5Jdk1gmduXcDOV-U9VN1zZBYyoJIB5GyYRb6E20HUrH45fL5-BtfoZ0ke60k3tmMgQs3PbMikE" />
+                        <div
+                            class="absolute top-2 left-2 bg-primary/10 dark:bg-primary/20 text-primary text-xs font-bold px-2 py-1 rounded-full">
+                            From Approved Dealer</div>
+                    </div>
+                    <div class="p-4 flex flex-col flex-grow">
+                        <h3 class="text-lg font-bold text-zinc-900 dark:text-white mb-1">Coachman VIP 575</h3>
+                        <p class="text-sm text-zinc-600 dark:text-zinc-400 mb-4">4 Berth • 1450kg MTPLM</p>
+                        <a href="caravan_details.html">
+                            <button
+                                class="mt-auto w-full px-4 py-2 text-sm font-bold rounded-full bg-primary/10 dark:bg-primary/20 text-primary group-hover:bg-primary group-hover:text-white transition-colors duration-300">
+                                View Details
+                            </button>
+                        </a>
+                    </div>
+                </div>
+                <div
+                    class="bg-background-light dark:bg-zinc-900/50 rounded-lg overflow-hidden shadow-md hover:shadow-xl transition-shadow duration-300 group">
+                    <div class="relative">
+                        <img alt="Elddis Xplore 304" class="w-full h-48 object-cover"
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuDNzp8-HcMG_0sFvVKrCLpfGIsxwuqNlvXvKSoKHMrlKdJgGq6_lD7Ply48b4fvnpjlZ8nIncCLCIsf_kTpb_quNyP31o6DR2upxfRcxEHeAlZ4qKiVBqmBCPUGtdPzbgZOJoq33Q--q0p8XMjgFY3COWtYl6XBiZqKaHsDpTHdMLKZsD5eEpRo2kE9fpi9LQVAImnRw61EbHjIOSgo35Q86h1R7aMvOedh5YWjfzdnbIWhKc2EXmt94mboztEmHihkM5ou8kY2qn0" />
+                        <div
+                            class="absolute top-2 left-2 bg-primary/10 dark:bg-primary/20 text-primary text-xs font-bold px-2 py-1 rounded-full">
+                            From Main Dealer</div>
+                    </div>
+                    <div class="p-4 flex flex-col flex-grow">
+                        <h3 class="text-lg font-bold text-zinc-900 dark:text-white mb-1">Sprite Alpine 4</h3>
+                        <p class="text-sm text-zinc-600 dark:text-zinc-400 mb-4">4 Berth • 1284kg MTPLM</p>
+                        <a href="caravan_details.html">
+                            <button
+                                class="mt-auto w-full px-4 py-2 text-sm font-bold rounded-full bg-primary/10 dark:bg-primary/20 text-primary group-hover:bg-primary group-hover:text-white transition-colors duration-300">
+                                View Details
+                            </button>
+                        </a>
+                    </div>
+                </div>
+                <div
+                    class="bg-background-light dark:bg-zinc-900/50 rounded-lg overflow-hidden shadow-md hover:shadow-xl transition-shadow duration-300 group">
+                    <div class="relative">
+                        <img alt="Lunar Quasar 546" class="w-full h-48 object-cover"
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuCROD4ZlUBQeFoudSP_5cgWOjps5zrkgax-L4a76JlJIa7su-A26rpJqfbhiQSv5nj2sre437t4cXWrcHRxeGDcfU1epCv1B-yK6xUFtO_33ylioK8mRsRDiziGSHnx5w3PI3dI93JrtCt54oa3zCge_IdzmUtSDu909vwRX_K_dOu_7ZR9yIF_6gIQ-9o0P7OyhsOzyFAXeq8boZxbLY-dqKe_U8b9EaMEYwZYSlXVwuEfZh7w65X4wrczuLKAKYvlRpGPVX6p01g" />
+                        <div
+                            class="absolute top-2 left-2 bg-primary/10 dark:bg-primary/20 text-primary text-xs font-bold px-2 py-1 rounded-full">
+                            From Main Dealer</div>
+                    </div>
+                    <div class="p-4 flex flex-col flex-grow">
+                        <h3 class="text-lg font-bold text-zinc-900 dark:text-white mb-1">Knaus Sport&amp;Fun</h3>
+                        <p class="text-sm text-zinc-600 dark:text-zinc-400 mb-4">4 Berth • 1300kg MTPLM</p>
+                        <a href="caravan_details.html">
+                            <button
+                                class="mt-auto w-full px-4 py-2 text-sm font-bold rounded-full bg-primary/10 dark:bg-primary/20 text-primary group-hover:bg-primary group-hover:text-white transition-colors duration-300">
+                                View Details
+                            </button>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </main>
+        <footer class="bg-background-light dark:bg-zinc-900/50 border-t border-zinc-200 dark:border-zinc-800">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-8">
+                <div class="flex flex-col md:flex-row justify-between items-center gap-6">
+                    <div class="flex items-center gap-2">
+                        <img src="../assets/logo.png" class="h-8 w-auto" alt="">
+                        <span class="text-sm text-zinc-600 dark:text-zinc-400">© 2025 Know My Tow. All rights
+                            reserved.</span>
+                    </div>
+                    <div class="flex gap-6">
+                        <a class="text-sm text-zinc-600 dark:text-zinc-400 hover:text-primary" href="#">Terms</a>
+                        <a class="text-sm text-zinc-600 dark:text-zinc-400 hover:text-primary" href="#">Privacy</a>
+                        <a class="text-sm text-zinc-600 dark:text-zinc-400 hover:text-primary" href="#">Contact</a>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+</body>
+
+</html>

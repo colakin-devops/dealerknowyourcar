@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+  <title>Know My Tow - Dealer Dashboard</title>
+  <link rel="shortcut icon" href="../assets/favicon.png" type="image/x-icon">
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <link href="https://fonts.googleapis.com" rel="preconnect" />
+  <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&amp;display=swap" rel="stylesheet" />
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script>
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            primary: "#66cd4f",
+            "background-light": "#f6f8f6",
+            "background-dark": "#142111",
+            "accent-green": "#5DC04A",
+          },
+          fontFamily: {
+            display: ["Inter"],
+          },
+          borderRadius: {
+            DEFAULT: "0.5rem",
+            lg: "1rem",
+            xl: "1.5rem",
+            full: "9999px",
+          },
+        },
+      },
+    };
+  </script>
+  <style>
+    .material-symbols-outlined {
+      font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 24;
+    }
+  </style>
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+</head>
+
+<body class="bg-background-light dark:bg-background-dark font-display text-background-dark dark:text-background-light">
+  <div class="flex min-h-screen w-full">
+    <aside
+      class="fixed top-0 left-0 h-screen w-64 bg-surface-light dark:bg-surface-dark border-r border-primary/20 dark:border-primary/30 bg-background-light dark:bg-background-dark">
+      <!-- Logo -->
+      <div class="p-4 flex justify-center">
+        <a href="">
+          <img class="w-40 h-auto" src="../assets/hyundai.png" 
+          alt="Know My Tow Logo">
+        </a>
+      </div>
+
+      <!-- Main Navigation -->
+      <nav class="flex-1 space-y-2 px-4">
+        <a href="dashboard.html"
+          class="flex items-center gap-3 rounded-md px-3 py-2 text-white bg-gradient-to-r from-[#66cd4f] to-[#93dc84] hover:from-[#57b843] hover:to-[#7fcf6e] transition-all">
+
+          <span class="material-symbols-outlined">dashboard</span>
+          Dashboard
+        </a>
+        <a class="flex items-center gap-3 rounded-lg px-3 py-2 text-background-dark dark:text-background-light transition-all hover:bg-primary/10 dark:hover:bg-primary/20 hover:text-primary"
+          href="inventory.html">
+          <span class="material-symbols-outlined">directions_car</span>
+          Car
+        </a>
+        <a class="flex items-center gap-3 rounded-lg px-3 py-2 text-background-dark dark:text-background-light transition-all hover:bg-primary/10 dark:hover:bg-primary/20 hover:text-primary"
+          href="leads.html">
+          <span class="material-symbols-outlined">groups</span>
+          Applicant
+        </a>
+
+        <a class="flex items-center gap-3 rounded-lg px-3 py-2 text-background-dark dark:text-background-light transition-all hover:bg-primary/10 dark:hover:bg-primary/20 hover:text-primary"
+          href="report/report.html">
+          <span class="material-symbols-outlined">assessment</span>
+          Application
+        </a>
+        <a class="flex items-center gap-3 rounded-lg px-3 py-2 text-background-dark dark:text-background-light transition-all hover:bg-primary/10 dark:hover:bg-primary/20 hover:text-primary"
+          href="plans.html">
+          <span class="material-symbols-outlined">star</span>
+          Plan
+        </a>
+        <a class="flex items-center gap-3 rounded-lg px-3 py-2 text-background-dark dark:text-background-light transition-all hover:bg-primary/10 dark:hover:bg-primary/20 hover:text-primary"
+          href="support.html">
+          <span class="material-symbols-outlined">support_agent</span>
+          Support
+        </a>
+        <a class="flex items-center gap-3 rounded-lg px-3 py-2 text-background-dark dark:text-background-light transition-all hover:bg-primary/10 dark:hover:bg-primary/20 hover:text-primary"
+          href="settings.html">
+          <span class="material-symbols-outlined">settings</span>
+          Settings
+        </a>
+
+        <!-- Help -->
+        <a class="flex items-center gap-3 rounded-lg px-3 py-2 text-background-dark dark:text-background-light transition-all hover:bg-primary/10 dark:hover:bg-primary/20 hover:text-primary"
+          href="help.html">
+          <span class="material-symbols-outlined">help</span>
+          Help
+        </a>
+      </nav>
+    </aside>
+
+    <div class="flex-1 flex flex-col ml-64 min-h-screen">
+      <header
+        class="flex items-center justify-end whitespace-nowrap border-b border-primary/20 dark:border-primary/30 px-6 sm:px-10 py-4 h-[77px]">
+        <div class="flex items-center gap-4">
+          <a href="notifications.html">
+            <button
+              class="flex h-10 w-10 cursor-pointer items-center justify-center rounded-full bg-primary/10 text-background-dark dark:text-background-light hover:bg-primary/20 dark:hover:bg-primary/30 transition-colors">
+              <span class="material-symbols-outlined"> notifications </span>
+            </button>
+          </a>
+          <div class="relative inline-block">
+            <!-- Profile Icon -->
+            <div id="profileBtn" class="w-8 h-8 bg-cover rounded-full cursor-pointer"
+              style="background-image: url('../assets/user.png');">
+            </div>
+
+            <!-- Popup -->
+            <div id="profilePopup"
+              class="hidden absolute right-0 mt-2 w-60 bg-white border rounded-lg shadow-lg p-4 z-50">
+              <div class="flex items-center space-x-3">
+                <img src="../assets/user.png" class="w-10 h-10 rounded-full" />
+                <div>
+                  <p class="font-semibold text-black">John Doe</p>
+                  <p class="text-sm text-gray-500">john@dow.com</p>
+                </div>
+              </div>
+              <hr class="my-3">
+              <p class="text-sm text-gray-700 pl-3">Dealer</p>
+              <a href="../dealer/login.html">
+                <button class="mt-2 w-full text-left text-black px-3 py-2 rounded-lg hover:bg-gray-100">Log out</button>
+              </a>
+            </div>
+            <script>
+              const btn = document.getElementById("profileBtn");
+              const popup = document.getElementById("profilePopup");
+
+              btn.addEventListener("click", () => {
+                popup.classList.toggle("hidden");
+              });
+              document.addEventListener("click", (e) => {
+                if (!btn.contains(e.target) && !popup.contains(e.target)) {
+                  popup.classList.add("hidden");
+                }
+              });
+            </script>
+          </div>
+        </div>
+      </header>
+      <main class="flex-1 px-2 py-6 sm:px-4 lg:px-6">
+        <div class="mx-auto max-w-7xl">
+          <div class="mb-8 px-4">
+            <h2 class="text-3xl font-bold tracking-tight">Dashboard</h2>
+            <p class="text-neutral-500 dark:text-neutral-400 mt-1">Applicants and Applications at a glance.</p>
+
+          </div>
+          <div class="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3 p-1">
+            <div class="flex flex-col gap-2 rounded-xl bg-accent-green p-6 text-white shadow-lg">
+              <p class="text-base font-medium text-white/80">Applicant</p>
+              <p class="text-4xl font-bold">120</p>
+            </div>
+            <div class="flex flex-col gap-2 rounded-xl bg-accent-green p-6 text-white shadow-lg">
+              <p class="text-base font-medium text-white/80">Application</p>
+              <p class="text-4xl font-bold">45</p>
+            </div>
+            <div class="flex flex-col gap-2 rounded-xl bg-accent-green p-6 text-white shadow-lg">
+              <p class="text-base font-medium text-white/80">Car</p>
+              <p class="text-4xl font-bold">300</p>
+            </div>
+          </div>
+          <div class="mt-8 grid grid-cols-1 lg:grid-cols-2 gap-8 px-4">
+            <div class="lg:col-span-2">
+              <h3 class="text-2xl font-bold tracking-tight mb-4">Recent Lead</h3>
+              <div class="overflow-x-auto">
+<table class="w-full text-left">
+  <thead>
+    <tr class="text-text-light/60 dark:text-text-dark/60 border-b border-border-light dark:border-border-dark">
+      
+      <th class="py-3 px-4 font-semibold">Car</th>
+      <th class="py-3 px-4 font-semibold">Applicant</th>
+      <th class="py-3 px-4 font-semibold">Application</th>
+      <th class="py-3 px-4 font-semibold">Loan Ammount</th>
+      <th class="py-3 px-4 font-semibold">Status</th>
+    </tr>
+  </thead>
+  <tbody>
+    <!-- Existing Rows -->
+    <tr class="border-b border-border-light dark:border-border-dark">
+      
+      <td class="py-3 px-4 hover:text-green-500 cursor-pointer" onclick="window.location.href='./view-inventory.html'">Hyundai Creta SX</td>
+      <td class="py-3 px-4 hover:text-green-500 cursor-pointer" onclick="window.location.href='./leads_detail.html'">Ramesh R</td>
+      <td class="py-3 px-4 hover:text-green-500 cursor-pointer" onclick="window.location.href='./applicant_detail.html'">APP_0000000002</td>
+      <td class="py-3 px-4">₹3,50,000</td>
+      <td class="py-3 px-4 text-green-500">Approved</td>
+    </tr>
+
+    <!-- ... Existing rows ... -->
+
+    <!-- New Indian Rows -->
+    <tr class="border-b border-border-light dark:border-border-dark">
+
+      <td class="py-3 px-4 hover:text-green-500 cursor-pointer" onclick="window.location.href='./view-inventory.html'">Honda City</td>
+      <td class="py-3 px-4 hover:text-green-500 cursor-pointer" onclick="window.location.href='./leads_detail.html'">Manoj Sharma</td>
+      <td class="py-3 px-4 hover:text-green-500 cursor-pointer" onclick="window.location.href='./applicant_detail.html'">APP_0000001332</td>
+      <td class="py-3 px-4">₹2,50,000</td>
+      <td class="py-3 px-4 text-green-500">Approved</td>
+    </tr>
+
+    <tr class="border-b border-border-light dark:border-border-dark">
+
+      <td class="py-3 px-4 hover:text-green-500 cursor-pointer" onclick="window.location.href='./view-inventory.html'">Tata Nexon</td>
+      <td class="py-3 px-4 hover:text-green-500 cursor-pointer" onclick="window.location.href='./leads_detail.html'">Priya Singh</td>
+      <td class="py-3 px-4 hover:text-green-500 cursor-pointer" onclick="window.location.href='./applicant_detail.html'">APP_0054320002</td>
+      <td class="py-3 px-4">₹3,40,000</td>
+      <td class="py-3 px-4 text-red-500">Declined</td>
+    </tr>
+
+    <tr class="border-b border-border-light dark:border-border-dark">
+
+      <td class="py-3 px-4 hover:text-green-500 cursor-pointer" onclick="window.location.href='./view-inventory.html'">Maruti Swift</td>
+      <td class="py-3 px-4 hover:text-green-500 cursor-pointer" onclick="window.location.href='./leads_detail.html'">Arun Mehta</td>
+      <td class="py-3 px-4 hover:text-green-500 cursor-pointer" onclick="window.location.href='./applicant_detail.html'">APP_0976500002</td>
+      <td class="py-3 px-4">₹1,95,000</td>
+      <td class="py-3 px-4 text-green-500">Approved</td>
+    </tr>
+
+    <tr class="border-b border-border-light dark:border-border-dark">
+     
+      <td class="py-3 px-4 hover:text-green-500 cursor-pointer" onclick="window.location.href='./view-inventory.html'">Mahindra SUV700</td>
+      <td class="py-3 px-4 hover:text-green-500 cursor-pointer" onclick="window.location.href='./leads_detail.html'">Sneha Iyer</td>
+      <td class="py-3 px-4 hover:text-green-500 cursor-pointer" onclick="window.location.href='./applicant_detail.html'">APP_0012550002</td>
+      <td class="py-3 px-4">₹4,85,000</td>
+      <td class="py-3 px-4 text-red-500">Declined</td>
+    </tr>
+
+    <tr class="border-b border-border-light dark:border-border-dark">
+      
+      <td class="py-3 px-4 hover:text-green-500 cursor-pointer" onclick="window.location.href='./view-inventory.html'">Honda City</td>
+      <td class="py-3 px-4 hover:text-green-500 cursor-pointer" onclick="window.location.href='./leads_detail.html'">Manoj Verma</td>
+      <td class="py-3 px-4 hover:text-green-500 cursor-pointer" onclick="window.location.href='./applicant_detail.html'">APP_4321000002</td>
+      <td class="py-3 px-4">₹3,20,000</td>
+      <td class="py-3 px-4 text-red-500">Declined</td>
+    </tr>
+
+    <tr class="border-b border-border-light dark:border-border-dark">
+
+      <td class="py-3 px-4 hover:text-green-500 cursor-pointer" onclick="window.location.href='./view-inventory.html'">Toyota Innova</td>
+      <td class="py-3 px-4 hover:text-green-500 cursor-pointer" onclick="window.location.href='./leads_detail.html'">Neha Gupta</td>
+      <td class="py-3 px-4 hover:text-green-500 cursor-pointer" onclick="window.location.href='./applicant_detail.html'">APP_4000000002</td>
+      <td class="py-3 px-4">₹5,75,000</td>
+      <td class="py-3 px-4 text-green-500">Approved</td>
+    </tr>
+
+    <tr class="border-b border-border-light dark:border-border-dark">
+
+      <td class="py-3 px-4 hover:text-green-500 cursor-pointer" onclick="window.location.href='./view-inventory.html'">Kia Seltos</td>
+      <td class="py-3 px-4 hover:text-green-500 cursor-pointer" onclick="window.location.href='./leads_detail.html'">Vikram Das</td>
+      <td class="py-3 px-4 hover:text-green-500 cursor-pointer" onclick="window.location.href='./applicant_detail.html'">APP_0076000002</td>
+      <td class="py-3 px-4">₹4,10,000</td>
+      <td class="py-3 px-4 text-green-500">Approved</td>
+    </tr>
+
+    <tr class="border-b border-border-light dark:border-border-dark">
+   
+      <td class="py-3 px-4 hover:text-green-500 cursor-pointer" onclick="window.location.href='./view-inventory.html'">MG Hector</td>
+      <td class="py-3 px-4 hover:text-green-500 cursor-pointer" onclick="window.location.href='./leads_detail.html'">Anjali Nair</td>
+      <td class="py-3 px-4 hover:text-green-500 cursor-pointer" onclick="window.location.href='./applicant_detail.html'">APP_0089000002</td>
+      <td class="py-3 px-4">₹4,60,000</td>
+      <td class="py-3 px-4 text-red-500">Declined</td>
+    </tr>
+
+    <tr class="border-b border-border-light dark:border-border-dark">
+     
+      <td class="py-3 px-4 hover:text-green-500 cursor-pointer" onclick="window.location.href='./view-inventory.html'">Skoda Slavia</td>
+      <td class="py-3 px-4 hover:text-green-500 cursor-pointer" onclick="window.location.href='./leads_detail.html'">Rohit Sharma</td>
+      <td class="py-3 px-4 hover:text-green-500 cursor-pointer" onclick="window.location.href='./applicant_detail.html'">APP_0004500002</td>
+      <td class="py-3 px-4">₹3,75,000</td>
+      <td class="py-3 px-4 text-green-500">Approved</td>
+    </tr>
+
+    <tr class="border-b border-border-light dark:border-border-dark">
+      
+      <td class="py-3 px-4 hover:text-green-500 cursor-pointer" onclick="window.location.href='./view-inventory.html'">Renault Kiger</td>
+      <td class="py-3 px-4 hover:text-green-500 cursor-pointer" onclick="window.location.href='./leads_detail.html'">Divya Menon</td>
+      <td class="py-3 px-4 hover:text-green-500 cursor-pointer" onclick="window.location.href='./applicant_detail.html'">APP_0000500002</td>
+      <td class="py-3 px-4">₹2,80,000</td>
+      <td class="py-3 px-4 text-green-500">Approved</td>
+    </tr>
+  </tbody>
+</table>
+
+</div>
+              <!-- Pagination -->
+              <div class="flex justify-between items-center mt-6 px-4">
+                <span class="text-sm text-gray-500">Showing 1 to 10 of 120 reports</span>
+                <div class="flex items-center gap-2">
+                  <button
+                    class="px-3 py-1 border border-primary/20 rounded-md text-sm hover:bg-primary/10">Previous</button>
+                  <button
+                    class="px-3 py-1 border border-primary/20 rounded-md text-sm hover:bg-primary/10">Next</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
+  </div>
+  <script>
+    const ctx = document.getElementById("leadStatusChart").getContext("2d");
+    const leadStatusChart = new Chart(ctx, {
+      type: "doughnut",
+      data: {
+        labels: ["New", "Contacted", "Closed", "Unqualified"],
+        datasets: [
+          {
+            label: "Lead Status",
+            data: [20, 15, 8, 2],
+            backgroundColor: [
+              "#5DC04A", // accent-green
+              "#66cd4f", // primary
+              "#36A2EB",
+              "#FF6384",
+            ],
+            borderColor: tailwind.config.theme.extend.colors["background-light"],
+            borderWidth: 2,
+          },
+        ],
+      },
+      options: {
+        responsive: true,
+        plugins: {
+          legend: {
+            position: "top",
+            labels: {
+              color: document.body.classList.contains("dark") ? "#f6f8f6" : "#142111",
+            }
+          },
+        },
+      },
+    });
+  </script>
+
+</body>
+
+</html>

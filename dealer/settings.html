@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+  <title>Know My Tow - Settings</title>
+  <link rel="shortcut icon" href="../assets/favicon.png" type="image/x-icon">
+  <link href="data:image/x-icon;base64," rel="icon" type="image/x-icon" />
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <link href="https://fonts.googleapis.com" rel="preconnect" />
+  <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+  <script>
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            primary: "#66cd4f",
+            "background-light": "#f6f8f6",
+            "background-dark": "#142111",
+            "accent-green": "#5DC04A",
+          },
+          fontFamily: {
+            display: ["Inter"],
+          },
+          borderRadius: {
+            DEFAULT: "0.5rem",
+            lg: "1rem",
+            xl: "1.5rem",
+            full: "9999px",
+          },
+        },
+      },
+    };
+  </script>
+  <style>
+    .material-symbols-outlined {
+      font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 24;
+    }
+  </style>
+</head>
+
+<body class="bg-background-light dark:bg-background-dark font-display text-background-dark dark:text-background-light">
+  <div class="flex min-h-screen w-full">
+    <!-- Sidebar -->
+    <aside
+      class="fixed top-0 left-0 h-screen w-64 bg-surface-light dark:bg-surface-dark border-r border-primary/20 dark:border-primary/30 bg-background-light dark:bg-background-dark">
+      <!-- Logo -->
+      <div class="p-4 flex justify-center">
+        <a href="">
+          <img class="w-40 h-auto" src="../assets/hyundai.png" 
+          alt="Know My Tow Logo">
+        </a>
+      </div>
+
+      <!-- Main Navigation -->
+      <nav class="flex-1 space-y-2 px-4">
+        <a href="dashboard.html"
+          class="flex items-center gap-3 rounded-lg px-3 py-2 text-background-dark dark:text-background-light transition-all hover:bg-primary/10 dark:hover:bg-primary/20 hover:text-primary">
+
+          <span class="material-symbols-outlined">dashboard</span>
+          Dashboard
+        </a>
+        <a class="flex items-center gap-3 rounded-lg px-3 py-2 text-background-dark dark:text-background-light transition-all hover:bg-primary/10 dark:hover:bg-primary/20 hover:text-primary"
+          href="inventory.html">
+          <span class="material-symbols-outlined">directions_car</span>
+          Car
+        </a>
+        <a class="flex items-center gap-3 rounded-lg px-3 py-2 text-background-dark dark:text-background-light transition-all hover:bg-primary/10 dark:hover:bg-primary/20 hover:text-primary"
+          href="leads.html">
+          <span class="material-symbols-outlined">groups</span>
+          Applicant
+        </a>
+
+        <a class="flex items-center gap-3 rounded-lg px-3 py-2 text-background-dark dark:text-background-light transition-all hover:bg-primary/10 dark:hover:bg-primary/20 hover:text-primary"
+          href="report/report.html">
+          <span class="material-symbols-outlined">assessment</span>
+          Application
+        </a>
+        <a class="flex items-center gap-3 rounded-lg px-3 py-2 text-background-dark dark:text-background-light transition-all hover:bg-primary/10 dark:hover:bg-primary/20 hover:text-primary"
+          href="plans.html">
+          <span class="material-symbols-outlined">star</span>
+          Plan
+        </a>
+        <a class="flex items-center gap-3 rounded-lg px-3 py-2 text-background-dark dark:text-background-light transition-all hover:bg-primary/10 dark:hover:bg-primary/20 hover:text-primary"
+          href="support.html">
+          <span class="material-symbols-outlined">support_agent</span>
+          Support
+        </a>
+        <a class="flex items-center gap-3 rounded-md px-3 py-2 text-white bg-gradient-to-r from-[#66cd4f] to-[#93dc84] hover:from-[#57b843] hover:to-[#7fcf6e] transition-all"
+          href="settings.html">
+          <span class="material-symbols-outlined">settings</span>
+          Setting
+        </a>
+
+        <!-- Help -->
+        <a class="flex items-center gap-3 rounded-lg px-3 py-2 text-background-dark dark:text-background-light transition-all hover:bg-primary/10 dark:hover:bg-primary/20 hover:text-primary"
+          href="help.html">
+          <span class="material-symbols-outlined">help</span>
+          Help
+        </a>
+      </nav>
+    </aside>
+
+    <!-- Main Content -->
+    <div class="flex-1 flex flex-col ml-64 min-h-screen">
+      <!-- Header -->
+      <header
+        class="flex items-center justify-end border-b border-primary/20 dark:border-primary/30 px-6 sm:px-10 py-4 h-[77px]">
+        <div class="flex items-center gap-4">
+          <a href="notifications.html">
+            <button
+              class="flex h-10 w-10 cursor-pointer items-center justify-center rounded-full bg-primary/10 text-background-dark dark:text-background-light hover:bg-primary/20 dark:hover:bg-primary/30 transition-colors">
+              <span class="material-symbols-outlined"> notifications </span>
+            </button>
+          </a>
+          <div class="relative inline-block">
+            <!-- Profile Icon -->
+            <div id="profileBtn" class="w-8 h-8 bg-cover rounded-full cursor-pointer"
+              style="background-image: url('../assets/user.png');">
+            </div>
+
+            <!-- Popup -->
+            <div id="profilePopup"
+              class="hidden absolute right-0 mt-2 w-60 bg-white border rounded-lg shadow-lg p-4 z-50">
+              <div class="flex items-center space-x-3">
+                <img src="../assets/user.png" class="w-10 h-10 rounded-full" />
+                <div>
+                  <p class="font-semibold text-black">John Doe</p>
+                  <p class="text-sm text-gray-500">john@dow.com</p>
+                </div>
+              </div>
+              <hr class="my-3">
+              <p class="text-sm text-gray-700 pl-3">Dealer</p>
+              <a href="../dealer/login.html">
+                <button class="mt-2 w-full text-left text-black px-3 py-2 rounded-lg hover:bg-gray-100">Log
+                  out</button>
+              </a>
+            </div>
+            <script>
+              const btn = document.getElementById("profileBtn");
+              const popup = document.getElementById("profilePopup");
+
+              btn.addEventListener("click", () => {
+                popup.classList.toggle("hidden");
+              });
+              document.addEventListener("click", (e) => {
+                if (!btn.contains(e.target) && !popup.contains(e.target)) {
+                  popup.classList.add("hidden");
+                }
+              });
+            </script>
+          </div>
+        </div>
+      </header>
+
+      <!-- Settings Content -->
+      <main class="flex-1 px-4 py-8 sm:px-6 lg:px-12">
+        <div class="mx-auto max-w-5xl">
+          <!-- Title -->
+          <div class="mb-8 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
+            <!-- Left side -->
+            <div>
+              <h2 class="text-3xl font-bold">Settings</h2>
+              <p class="mt-2 text-gray-600 dark:text-gray-400">Manage your account settings and preferences.</p>
+            </div>
+          </div>
+
+          <!-- Tabs Navigation -->
+          <div class="flex w-full max-w-md rounded-full bg-gray-100 dark:bg-neutral-800 p-1 mb-8">
+            <a href="dealer_profile.html" class="flex-1 text-center px-4 py-2 rounded-full text-sm font-medium 
+            transition-all 
+            bg-primary text-white">
+              User Profile
+            </a>
+            <a href="dealer_profile.html" class="flex-1 text-center px-4 py-2 rounded-full text-sm font-medium 
+            transition-all text-gray-700 dark:text-gray-300 hover:text-green-500">
+              Dealer Profile
+            </a>
+          </div>
+
+
+
+          <!-- Profile Form -->
+          <div
+            class="bg-background-light dark:bg-background-dark border border-primary/20 dark:border-primary/30 p-8 rounded-lg shadow-sm">
+            <form class="space-y-6">
+              <div>
+                <label for="first-name" class="block text-sm font-medium mb-2">First Name</label>
+                <input id="first-name" type="text" value="Manoj"
+                  class="form-input w-full bg-background-light dark:bg-neutral-800 border border-primary/20 dark:border-primary/30 rounded-lg focus:ring-primary focus:border-primary" />
+              </div>
+              <div>
+                <label for="last-name" class="block text-sm font-medium mb-2">Last Name</label>
+                <input id="last-name" type="text" value="Sharma"
+                  class="form-input w-full bg-background-light dark:bg-neutral-800 border border-primary/20 dark:border-primary/30 rounded-lg focus:ring-primary focus:border-primary" />
+              </div>
+              <div>
+                <label for="email" class="block text-sm font-medium mb-2">Email</label>
+                <input id="email" type="email" value="manojsharma@gmail.com"
+                  class="form-input w-full bg-background-light dark:bg-neutral-800 border border-primary/20 dark:border-primary/30 rounded-lg focus:ring-primary focus:border-primary" />
+              </div>
+              <div class="pt-4 flex flex-col sm:flex-row sm:justify-end gap-4">
+                <button type="submit"
+                  class="w-full sm:w-auto px-6 py-2.5 rounded-lg bg-primary text-white font-bold text-sm hover:opacity-90 transition-opacity">
+                  Save Changes
+                </button>
+              </div>
+            </form>
+          </div>
+
+          <!-- Security -->
+          <div
+            class="mt-8 bg-background-light dark:bg-background-dark border border-primary/20 dark:border-primary/30 p-8 rounded-lg shadow-sm">
+            <h3 class="text-xl font-bold mb-2">Security</h3>
+            <p class="text-gray-600 dark:text-gray-400 mb-6">Manage your password and account security.</p>
+            <div class="flex items-center justify-between">
+              <div>
+                <p class="font-medium">Password</p>
+                <p class="text-sm text-gray-500 dark:text-gray-400">Last changed on 12th Aug 2023</p>
+              </div>
+              <button
+                class="px-4 py-2 rounded-lg bg-gray-200 dark:bg-neutral-800 font-bold text-sm hover:bg-gray-300 dark:hover:bg-neutral-700 transition-colors">
+                Change Password
+              </button>
+            </div>
+          </div>
+
+          <!-- Delete Account -->
+          <div class="mt-8 p-8 rounded-lg border border-red-500/30 dark:border-red-500/40">
+            <h3 class="text-xl font-bold text-red-600 dark:text-red-500 mb-2">Delete Account</h3>
+            <p class="text-gray-600 dark:text-gray-400 mb-6">
+              Permanently delete your account and all of your content. This action is not reversible, so please continue
+              with caution.
+            </p>
+            <button
+              class="w-full sm:w-auto px-6 py-2.5 rounded-lg bg-red-600 text-white font-bold text-sm hover:bg-red-700 transition-colors">
+              Delete My Account
+            </button>
+          </div>
+        </div>
+      </main>
+    </div>
+  </div>
+</body>
+
+</html>

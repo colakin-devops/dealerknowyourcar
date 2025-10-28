@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Know My Tow - All Reports</title>
+    <link rel="shortcut icon" href="../../assets/favicon.png" type="image/x-icon">
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&display=swap" rel="stylesheet" />
+    <script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        primary: "#66cd4f",
+                        "background-light": "#f6f8f6",
+                        "background-dark": "#142111",
+                        "accent-green": "#5DC04A",
+                    },
+                    fontFamily: {
+                        display: ["Inter"],
+                    },
+                    borderRadius: {
+                        DEFAULT: "0.5rem",
+                        lg: "1rem",
+                        xl: "1.5rem",
+                        full: "9999px",
+                    },
+                },
+            },
+        };
+    </script>
+    <style>
+        .material-symbols-outlined {
+            font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 24;
+        }
+    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+</head>
+
+<body class="bg-background-light dark:bg-background-dark font-display text-background-dark dark:text-background-light">
+    <div class="flex min-h-screen w-full">
+        <!-- Sidebar -->
+        <aside
+            class="fixed top-0 left-0 h-screen w-64 bg-surface-light dark:bg-surface-dark border-r border-primary/20 dark:border-primary/30 bg-background-light dark:bg-background-dark">
+            <!-- Logo -->
+            <div class="p-4 flex justify-center">
+                <a href="../dashboard.html">
+                    <img class="w-40 h-auto" src="../../assets/hyundai.png" alt="Know My Tow Logo">
+                </a>
+            </div>
+
+            <!-- Main Navigation -->
+            <nav class="flex-1 space-y-2 px-4">
+
+                <a class="flex items-center gap-3 rounded-lg px-3 py-2 text-background-dark dark:text-background-light transition-all hover:bg-primary/10 dark:hover:bg-primary/20 hover:text-primary"
+                    href="../dashboard.html">
+                    <span class="material-symbols-outlined">dashboard</span>
+                    Dashboard
+                </a>
+                <a class="flex items-center gap-3 rounded-lg px-3 py-2 text-background-dark dark:text-background-light transition-all hover:bg-primary/10 dark:hover:bg-primary/20 hover:text-primary"
+                    href="../inventory.html">
+                    <span class="material-symbols-outlined">directions_car</span>
+                    Car
+                </a>
+                <a class="flex items-center gap-3 rounded-lg px-3 py-2 text-background-dark dark:text-background-light transition-all hover:bg-primary/10 dark:hover:bg-primary/20 hover:text-primary"
+                    href="../leads.html">
+                    <span class="material-symbols-outlined">groups</span>
+                    Applicant
+                </a>
+                <a href=""
+                    class="flex items-center gap-3 rounded-md px-3 py-2 text-white bg-gradient-to-r from-[#66cd4f] to-[#93dc84] hover:from-[#57b843] hover:to-[#7fcf6e] transition-all">
+
+                    <span class="material-symbols-outlined">assessment</span>
+                    Application
+                </a>
+                <a class="flex items-center gap-3 rounded-lg px-3 py-2 text-background-dark dark:text-background-light transition-all hover:bg-primary/10 dark:hover:bg-primary/20 hover:text-primary"
+                    href="../plans.html">
+                    <span class="material-symbols-outlined">star</span>
+                    Plan
+                </a>
+                <a class="flex items-center gap-3 rounded-lg px-3 py-2 text-background-dark dark:text-background-light transition-all hover:bg-primary/10 dark:hover:bg-primary/20 hover:text-primary"
+                    href="../support.html">
+                    <span class="material-symbols-outlined">support_agent</span>
+                    Support
+                </a>
+                <a class="flex items-center gap-3 rounded-lg px-3 py-2 text-background-dark dark:text-background-light transition-all hover:bg-primary/10 dark:hover:bg-primary/20 hover:text-primary"
+                    href="../settings.html">
+                    <span class="material-symbols-outlined">settings</span>
+                    Settings
+                </a>
+                <a class="flex items-center gap-3 rounded-lg px-3 py-2 text-background-dark dark:text-background-light transition-all hover:bg-primary/10 dark:hover:bg-primary/20 hover:text-primary"
+                    href="../help.html">
+                    <span class="material-symbols-outlined">help</span>
+                    Help
+                </a>
+            </nav>
+        </aside>
+
+        <!-- Main content -->
+        <div class="flex-1 flex flex-col ml-64 min-h-screen">
+            <!-- Header -->
+            <header
+                class="flex items-center justify-end whitespace-nowrap border-b border-primary/20 dark:border-primary/30 px-6 sm:px-10 py-4 h-[77px]">
+                <div class="flex items-center gap-4">
+                    <a href="../notifications.html">
+                        <button
+                            class="flex h-10 w-10 cursor-pointer items-center justify-center rounded-full bg-primary/10 text-background-dark dark:text-background-light hover:bg-primary/20 dark:hover:bg-primary/30 transition-colors">
+                            <span class="material-symbols-outlined"> notifications </span>
+                        </button>
+                    </a>
+                    <div class="relative inline-block">
+                        <!-- Profile Icon -->
+                        <div id="profileBtn" class="w-8 h-8 bg-cover rounded-full cursor-pointer"
+                            style="background-image: url('../../assets/user.png');">
+                        </div>
+
+                        <!-- Popup -->
+                        <div id="profilePopup"
+                            class="hidden absolute right-0 mt-2 w-60 bg-white border rounded-lg shadow-lg p-4 z-50">
+                            <div class="flex items-center space-x-3">
+                                <img src="../../assets/user.png" class="w-10 h-10 rounded-full" />
+                                <div>
+                                    <p class="font-semibold text-black">John Doe</p>
+                                    <p class="text-sm text-gray-500">john@dow.com</p>
+                                </div>
+                            </div>
+                            <hr class="my-3">
+                            <p class="text-sm text-gray-700 pl-3">Dealer</p>
+                            <a href="../../dealer/login.html">
+                                <button
+                                    class="mt-2 w-full text-left text-black px-3 py-2 rounded-lg hover:bg-gray-100">Log
+                                    out</button>
+                            </a>
+                        </div>
+                        <script>
+                            const btn = document.getElementById("profileBtn");
+                            const popup = document.getElementById("profilePopup");
+
+                            btn.addEventListener("click", () => {
+                                popup.classList.toggle("hidden");
+                            });
+                            document.addEventListener("click", (e) => {
+                                if (!btn.contains(e.target) && !popup.contains(e.target)) {
+                                    popup.classList.add("hidden");
+                                }
+                            });
+                        </script>
+                    </div>
+                </div>
+            </header>
+
+            <!-- Page Content -->
+            <main class="flex-grow container mx-auto px-4 sm:px-6 lg:px-8 py-8">
+    <div class="flex items-center justify-between mb-2">
+      <h2 class="text-3xl font-bold tracking-tight">All Applications</h2>
+    </div>
+    <p class="mb-2">
+      Applications are potential customers who have shown interest in a car and are recorded for follow-up and analysis.
+    </p>
+
+    <div class="bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg overflow-hidden">
+      <div class="overflow-x-auto">
+        <table class="w-full">
+          <thead class="bg-gray-100 dark:bg-gray-700">
+            <tr>
+              <th class="px-6 py-4 text-left text-xs font-semibold uppercase tracking-wider">Application ID</th>
+              
+              <th class="px-6 py-4 text-left text-xs font-semibold uppercase tracking-wider">Car</th>
+              <th class="px-6 py-4 text-left text-xs font-semibold uppercase tracking-wider">Status</th>
+              <th class="px-6 py-4 text-left text-xs font-semibold uppercase tracking-wider">Amount</th>
+              <th class="px-6 py-4 text-left text-xs font-semibold uppercase tracking-wider">EMI</th>
+              <th class="px-6 py-4 text-left text-xs font-semibold uppercase tracking-wider">Date</th>
+              <th class="px-6 py-4 text-left text-xs font-semibold uppercase tracking-wider">Letter</th>
+            </tr>
+          </thead>
+
+          <tbody class="divide-y divide-gray-200 dark:divide-gray-700">
+
+            <!-- Row Example -->
+            <tr class="hover:bg-gray-50 dark:hover:bg-gray-700/50 transition">
+              <td class="px-6 py-4 text-sm font-medium text-black dark:text-gray-100 hover:text-green-600 cursor-pointer transition-colors"
+                  onclick="window.location.href='../applicant_detail.html'">APP_0000000002</td>
+
+              
+
+              <td class="px-6 py-4 text-sm text-black dark:text-gray-100 hover:text-green-600 cursor-pointer transition-colors"
+                  onclick="window.location.href='../view-inventory.html'">Hyundai Creta SX (O) Turbo</td>
+
+              <td class="px-6 py-4 text-sm font-medium text-green-600">Approved</td>
+              <td class="px-6 py-4 text-sm text-gray-700 dark:text-gray-300">₹15,20,000</td>
+              <td class="px-6 py-4 text-sm text-gray-700 dark:text-gray-300">₹24,500</td>
+              <td class="px-6 py-4 text-sm text-gray-700 dark:text-gray-300">15-10-2024</td>
+
+              <td class="px-6 py-4 flex items-center gap-3">
+                <!-- Word Icon -->
+                <a href="./documents/Memo.docx" download class="text-blue-500 hover:text-blue-700 transition" title="Download Word File">📝</a>
+                <!-- Open in new tab -->
+                <a href="./documents/Sansaction.docx" target="_blank" class="text-green-500 hover:text-green-700 transition" title="Open in New Tab">📝</a> 
+                <!-- 🌐 -->
+              </td>
+            </tr>
+
+            <!-- Duplicate more rows below -->
+            <tr class="hover:bg-gray-50 dark:hover:bg-gray-700/50 transition">
+              <td class="px-6 py-4 text-sm font-medium text-black dark:text-gray-100 hover:text-green-600 cursor-pointer transition-colors"
+                  onclick="window.location.href='../applicant_detail.html'">APP_0000000043</td>
+                 <td class="px-6 py-4 text-sm text-black dark:text-gray-100 hover:text-green-600 cursor-pointer transition-colors"
+                  onclick="window.location.href='../view-inventory.html'">Maruti Swift VXI</td>
+              <td class="px-6 py-4 text-sm font-medium text-red-500">Rejected</td>
+              <td class="px-6 py-4 text-sm text-gray-700 dark:text-gray-300">₹7,80,000</td>
+              <td class="px-6 py-4 text-sm text-gray-700 dark:text-gray-300">₹12,300</td>
+              <td class="px-6 py-4 text-sm text-gray-700 dark:text-gray-300">12-10-2024</td>
+              <td class="px-6 py-4 flex items-center gap-3">
+                <a href="./documents/Memo.docx" download class="text-blue-500 hover:text-blue-700 transition" title="Download Word File">📝</a>
+                <a href="./documents/Sansaction.docx" target="_blank" class="text-green-500 hover:text-green-700 transition" title="Open in New Tab">📝</a>
+              </td>
+            </tr>
+
+            <tr class="hover:bg-gray-50 dark:hover:bg-gray-700/50 transition">
+    <td class="px-6 py-4 text-sm font-medium text-black dark:text-gray-100 hover:text-green-600 cursor-pointer transition-colors"
+        onclick="window.location.href='../applicant_detail.html'">APP_0000000043</td>
+    
+    <td class="px-6 py-4 text-sm text-black dark:text-gray-100 hover:text-green-600 cursor-pointer transition-colors"
+        onclick="window.location.href='../view-inventory.html'">Maruti Swift VXI</td>
+    <td class="px-6 py-4 text-sm font-medium text-red-500">Rejected</td>
+    <td class="px-6 py-4 text-sm text-gray-700 dark:text-gray-300">₹7,80,000</td>
+    <td class="px-6 py-4 text-sm text-gray-700 dark:text-gray-300">₹12,300</td>
+    <td class="px-6 py-4 text-sm text-gray-700 dark:text-gray-300">12-10-2024</td>
+    <td class="px-6 py-4 flex items-center gap-3">
+      <a href="./documents/Memo.docx" download class="text-blue-500 hover:text-blue-700 transition" title="Download Word File">📝</a>
+      <a href="./documents/Sansaction.docx" target="_blank" class="text-green-500 hover:text-green-700 transition" title="Open in New Tab">📝</a>
+    </td>
+  </tr>
+
+  <tr class="hover:bg-gray-50 dark:hover:bg-gray-700/50 transition">
+    <td class="px-6 py-4 text-sm font-medium text-black dark:text-gray-100 hover:text-green-600 cursor-pointer transition-colors"
+        onclick="window.location.href='../applicant_detail.html'">APP_0000000044</td>
+    
+    <td class="px-6 py-4 text-sm text-black dark:text-gray-100 hover:text-green-600 cursor-pointer transition-colors"
+        onclick="window.location.href='../view-inventory.html'">Hyundai i20 Sportz</td>
+    <td class="px-6 py-4 text-sm font-medium text-green-500">Approved</td>
+    <td class="px-6 py-4 text-sm text-gray-700 dark:text-gray-300">₹8,90,000</td>
+    <td class="px-6 py-4 text-sm text-gray-700 dark:text-gray-300">₹10,200</td>
+    <td class="px-6 py-4 text-sm text-gray-700 dark:text-gray-300">14-10-2024</td>
+    <td class="px-6 py-4 flex items-center gap-3">
+      <a href="./documents/Memo.docx" download class="text-blue-500 hover:text-blue-700 transition" title="Download Word File">📝</a>
+      <a href="./documents/Sansaction.docx" target="_blank" class="text-green-500 hover:text-green-700 transition" title="Open in New Tab">📝</a>
+    </td>
+  </tr>
+
+  <tr class="hover:bg-gray-50 dark:hover:bg-gray-700/50 transition">
+    <td class="px-6 py-4 text-sm font-medium text-black dark:text-gray-100 hover:text-green-600 cursor-pointer transition-colors"
+        onclick="window.location.href='../applicant_detail.html'">APP_0000000045</td>
+    
+    <td class="px-6 py-4 text-sm text-black dark:text-gray-100 hover:text-green-600 cursor-pointer transition-colors"
+        onclick="window.location.href='../view-inventory.html'">Honda City ZX</td>
+    <td class="px-6 py-4 text-sm font-medium text-red-500">Rejected</td>
+    <td class="px-6 py-4 text-sm text-gray-700 dark:text-gray-300">₹12,50,000</td>
+    <td class="px-6 py-4 text-sm text-gray-700 dark:text-gray-300">₹15,000</td>
+    <td class="px-6 py-4 text-sm text-gray-700 dark:text-gray-300">16-10-2024</td>
+    <td class="px-6 py-4 flex items-center gap-3">
+      <a href="./documents/Memo.docx" download class="text-blue-500 hover:text-blue-700 transition" title="Download Word File">📝</a>
+      <a href="./documents/Sansaction.docx" target="_blank" class="text-green-500 hover:text-green-700 transition" title="Open in New Tab">📝</a>
+    </td>
+  </tr>
+
+  <tr class="hover:bg-gray-50 dark:hover:bg-gray-700/50 transition">
+    <td class="px-6 py-4 text-sm font-medium text-black dark:text-gray-100 hover:text-green-600 cursor-pointer transition-colors"
+        onclick="window.location.href='../applicant_detail.html'">APP_0000000046</td>
+    
+    <td class="px-6 py-4 text-sm text-black dark:text-gray-100 hover:text-green-600 cursor-pointer transition-colors"
+        onclick="window.location.href='../view-inventory.html'">Tata Nexon XZ+</td>
+    <td class="px-6 py-4 text-sm font-medium text-green-500">Approved</td>
+    <td class="px-6 py-4 text-sm text-gray-700 dark:text-gray-300">₹10,30,000</td>
+    <td class="px-6 py-4 text-sm text-gray-700 dark:text-gray-300">₹13,700</td>
+    <td class="px-6 py-4 text-sm text-gray-700 dark:text-gray-300">18-10-2024</td>
+    <td class="px-6 py-4 flex items-center gap-3">
+      <a href="./documents/Memo.docx" download class="text-blue-500 hover:text-blue-700 transition" title="Download Word File">📝</a>
+      <a href="./documents/Sansaction.docx" target="_blank" class="text-green-500 hover:text-green-700 transition" title="Open in New Tab">📝</a>
+    </td>
+  </tr>
+
+  <tr class="hover:bg-gray-50 dark:hover:bg-gray-700/50 transition">
+    <td class="px-6 py-4 text-sm font-medium text-black dark:text-gray-100 hover:text-green-600 cursor-pointer transition-colors"
+        onclick="window.location.href='../applicant_detail.html'">APP_0000000047</td>
+    
+    <td class="px-6 py-4 text-sm text-black dark:text-gray-100 hover:text-green-600 cursor-pointer transition-colors"
+        onclick="window.location.href='../view-inventory.html'">Kia Seltos HTK+</td>
+   <td class="px-6 py-4 text-sm font-medium text-red-500">Rejected</td>
+    <td class="px-6 py-4 text-sm text-gray-700 dark:text-gray-300">₹14,60,000</td>
+    <td class="px-6 py-4 text-sm text-gray-700 dark:text-gray-300">₹18,400</td>
+    <td class="px-6 py-4 text-sm text-gray-700 dark:text-gray-300">19-10-2024</td>
+    <td class="px-6 py-4 flex items-center gap-3">
+      <a href="./documents/Memo.docx" download class="text-blue-500 hover:text-blue-700 transition" title="Download Word File">📝</a>
+      <a href="./documents/Sansaction.docx" target="_blank" class="text-green-500 hover:text-green-700 transition" title="Open in New Tab">📝</a>
+    </td>
+  </tr>
+
+  <tr class="hover:bg-gray-50 dark:hover:bg-gray-700/50 transition">
+    <td class="px-6 py-4 text-sm font-medium text-black dark:text-gray-100 hover:text-green-600 cursor-pointer transition-colors"
+        onclick="window.location.href='../applicant_detail.html'">APP_0000000048</td>
+    
+    <td class="px-6 py-4 text-sm text-black dark:text-gray-100 hover:text-green-600 cursor-pointer transition-colors"
+        onclick="window.location.href='../view-inventory.html'">Volkswagen Polo TSI</td>
+    <td class="px-6 py-4 text-sm font-medium text-red-500">Rejected</td>
+    <td class="px-6 py-4 text-sm text-gray-700 dark:text-gray-300">₹9,70,000</td>
+    <td class="px-6 py-4 text-sm text-gray-700 dark:text-gray-300">₹12,000</td>
+    <td class="px-6 py-4 text-sm text-gray-700 dark:text-gray-300">20-10-2024</td>
+    <td class="px-6 py-4 flex items-center gap-3">
+      <a href="./documents/Memo.docx" download class="text-blue-500 hover:text-blue-700 transition" title="Download Word File">📝</a>
+      <a href="./documents/Sansaction.docx" target="_blank" class="text-green-500 hover:text-green-700 transition" title="Open in New Tab">📝</a>
+    </td>
+  </tr>
+
+  <tr class="hover:bg-gray-50 dark:hover:bg-gray-700/50 transition">
+    <td class="px-6 py-4 text-sm font-medium text-black dark:text-gray-100 hover:text-green-600 cursor-pointer transition-colors"
+        onclick="window.location.href='../applicant_detail.html'">APP_0000000049</td>
+  
+    <td class="px-6 py-4 text-sm text-black dark:text-gray-100 hover:text-green-600 cursor-pointer transition-colors"
+        onclick="window.location.href='../view-inventory.html'">Mahindra XUV300</td>
+    <td class="px-6 py-4 text-sm font-medium text-green-500">Approved</td>
+    <td class="px-6 py-4 text-sm text-gray-700 dark:text-gray-300">₹11,80,000</td>
+    <td class="px-6 py-4 text-sm text-gray-700 dark:text-gray-300">₹14,800</td>
+    <td class="px-6 py-4 text-sm text-gray-700 dark:text-gray-300">22-10-2024</td>
+    <td class="px-6 py-4 flex items-center gap-3">
+      <a href="./documents/Memo.docx" download class="text-blue-500 hover:text-blue-700 transition" title="Download Word File">📝</a>
+      <a href="./documents/Sansaction.docx" target="_blank" class="text-green-500 hover:text-green-700 transition" title="Open in New Tab">📝</a>
+    </td>
+  </tr>
+
+  <tr class="hover:bg-gray-50 dark:hover:bg-gray-700/50 transition">
+    <td class="px-6 py-4 text-sm font-medium text-black dark:text-gray-100 hover:text-green-600 cursor-pointer transition-colors"
+        onclick="window.location.href='../applicant_detail.html'">APP_0000000050</td>
+
+    <td class="px-6 py-4 text-sm text-black dark:text-gray-100 hover:text-green-600 cursor-pointer transition-colors"
+        onclick="window.location.href='../view-inventory.html'">Toyota Glanza G</td>
+    <td class="px-6 py-4 text-sm font-medium text-red-500">Rejected</td>
+    <td class="px-6 py-4 text-sm text-gray-700 dark:text-gray-300">₹8,60,000</td>
+    <td class="px-6 py-4 text-sm text-gray-700 dark:text-gray-300">₹10,800</td>
+    <td class="px-6 py-4 text-sm text-gray-700 dark:text-gray-300">24-10-2024</td>
+    <td class="px-6 py-4 flex items-center gap-3">
+      <a href="./documents/Memo.docx" download class="text-blue-500 hover:text-blue-700 transition" title="Download Word File">📝</a>
+      <a href="./documents/Sansaction.docx" target="_blank" class="text-green-500 hover:text-green-700 transition" title="Open in New Tab">📝</a>
+    </td>
+  </tr>
+
+            <!-- Add other rows as needed -->
+
+          </tbody>
+        </table>
+      </div>
+
+      <div class="flex justify-between items-center mt-6 p-6">
+        <span class="text-sm text-gray-500 dark:text-gray-400">Showing 1 to 10 of 500 applicants</span>
+        <div class="flex items-center gap-2">
+          <button class="px-3 py-1 border border-gray-300 dark:border-gray-600 rounded-md text-sm hover:bg-green-100 dark:hover:bg-gray-700">Previous</button>
+          <button class="px-3 py-1 border border-gray-300 dark:border-gray-600 rounded-md text-sm hover:bg-green-100 dark:hover:bg-gray-700">Next</button>
+        </div>
+      </div>
+    </div>
+  </main>
+        </div>
+    </div>
+</body>
+
+</html>

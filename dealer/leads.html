@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+  <title>Know My Tow - Dealer Leads</title>
+  <link rel="shortcut icon" href="../assets/favicon.png" type="image/x-icon">
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <link href="https://fonts.googleapis.com" rel="preconnect" />
+  <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&amp;display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+  <script>
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            primary: "#66cd4f",
+            "background-light": "#f6f8f6",
+            "background-dark": "#142111",
+            "accent-green": "#5DC04A",
+            "content-light": "#142111",
+            "content-dark": "#f6f8f6",
+            "subtle-light": "#dde5dc",
+            "subtle-dark": "#334c2f",
+          },
+          fontFamily: {
+            display: ["Inter"],
+          },
+          borderRadius: {
+            DEFAULT: "0.5rem",
+            lg: "1rem",
+            xl: "1.5rem",
+            full: "9999px",
+          },
+        },
+      },
+    };
+  </script>
+</head>
+
+<body class="bg-background-light dark:bg-background-dark font-display text-content-light dark:text-content-dark">
+  <div class="flex min-h-screen w-full">
+    <!-- Sidebar -->
+    <aside
+      class="fixed top-0 left-0 h-screen w-64 bg-surface-light dark:bg-surface-dark border-r border-primary/20 dark:border-primary/30 bg-background-light dark:bg-background-dark">
+      <!-- Logo -->
+      <div class="p-4 flex justify-center">
+        <a href="">
+          <img class="w-40 h-auto" src="../assets/hyundai.png" 
+          alt="Know My Tow Logo">
+        </a>
+      </div>
+
+      <!-- Main Navigation -->
+      <nav class="flex-1 space-y-2 px-4">
+        <a href="dashboard.html"
+          class="flex items-center gap-3 rounded-lg px-3 py-2 text-background-dark dark:text-background-light transition-all hover:bg-primary/10 dark:hover:bg-primary/20 hover:text-primary">
+
+          <span class="material-symbols-outlined">dashboard</span>
+          Dashboard
+        </a>
+        <a class="flex items-center gap-3 rounded-lg px-3 py-2 text-background-dark dark:text-background-light transition-all hover:bg-primary/10 dark:hover:bg-primary/20 hover:text-primary"
+          href="inventory.html">
+          <span class="material-symbols-outlined">directions_car</span>
+          Car
+        </a>
+        <a class="flex items-center gap-3 rounded-md px-3 py-2 text-white bg-gradient-to-r from-[#66cd4f] to-[#93dc84] hover:from-[#57b843] hover:to-[#7fcf6e] transition-all"
+          href="leads.html">
+          <span class="material-symbols-outlined">groups</span>
+          Applicant
+        </a>
+
+        <a class="flex items-center gap-3 rounded-lg px-3 py-2 text-background-dark dark:text-background-light transition-all hover:bg-primary/10 dark:hover:bg-primary/20 hover:text-primary"
+          href="report/report.html">
+          <span class="material-symbols-outlined">assessment</span>
+          Application
+        </a>
+        <a class="flex items-center gap-3 rounded-lg px-3 py-2 text-background-dark dark:text-background-light transition-all hover:bg-primary/10 dark:hover:bg-primary/20 hover:text-primary"
+          href="plans.html">
+          <span class="material-symbols-outlined">star</span>
+          Plan
+        </a>
+        <a class="flex items-center gap-3 rounded-lg px-3 py-2 text-background-dark dark:text-background-light transition-all hover:bg-primary/10 dark:hover:bg-primary/20 hover:text-primary"
+          href="support.html">
+          <span class="material-symbols-outlined">support_agent</span>
+          Support
+        </a>
+        <a class="flex items-center gap-3 rounded-lg px-3 py-2 text-background-dark dark:text-background-light transition-all hover:bg-primary/10 dark:hover:bg-primary/20 hover:text-primary"
+          href="settings.html">
+          <span class="material-symbols-outlined">settings</span>
+          Settings
+        </a>
+
+        <!-- Help -->
+        <a class="flex items-center gap-3 rounded-lg px-3 py-2 text-background-dark dark:text-background-light transition-all hover:bg-primary/10 dark:hover:bg-primary/20 hover:text-primary"
+          href="help.html">
+          <span class="material-symbols-outlined">help</span>
+          Help
+        </a>
+      </nav>
+    </aside>
+
+
+    <!-- Main content area -->
+    <div class="flex-1 flex flex-col ml-64 min-h-screen">
+      <!-- Header -->
+      <header
+        class="flex items-center justify-end border-b border-primary/20 dark:border-primary/30 px-6 sm:px-10 py-4 h-[77px]">
+        <div class="flex items-center gap-4">
+          <a href="notifications.html">
+            <button
+              class="flex h-10 w-10 cursor-pointer items-center justify-center rounded-full bg-primary/10 text-background-dark dark:text-background-light hover:bg-primary/20 dark:hover:bg-primary/30 transition-colors">
+              <span class="material-symbols-outlined"> notifications </span>
+            </button>
+          </a>
+          <div class="relative inline-block">
+            <!-- Profile Icon -->
+            <div id="profileBtn" class="w-8 h-8 bg-cover rounded-full cursor-pointer"
+              style="background-image: url('../assets/user.png');">
+            </div>
+
+            <!-- Popup -->
+            <div id="profilePopup"
+              class="hidden absolute right-0 mt-2 w-60 bg-white border rounded-lg shadow-lg p-4 z-50">
+              <div class="flex items-center space-x-3">
+                <img src="../assets/user.png" class="w-10 h-10 rounded-full" />
+                <div>
+                  <p class="font-semibold text-black">John Doe</p>
+                  <p class="text-sm text-gray-500">john@dow.com</p>
+                </div>
+              </div>
+              <hr class="my-3">
+              <p class="text-sm text-gray-700 pl-3">Dealer</p>
+              <a href="../dealer/login.html">
+                <button class="mt-2 w-full text-left text-black px-3 py-2 rounded-lg hover:bg-gray-100">Log
+                  out</button>
+              </a>
+            </div>
+            <script>
+              const btn = document.getElementById("profileBtn");
+              const popup = document.getElementById("profilePopup");
+
+              btn.addEventListener("click", () => {
+                popup.classList.toggle("hidden");
+              });
+              document.addEventListener("click", (e) => {
+                if (!btn.contains(e.target) && !popup.contains(e.target)) {
+                  popup.classList.add("hidden");
+                }
+              });
+            </script>
+          </div>
+        </div>
+      </header>
+
+      
+
+      <!-- Leads Content -->
+      <main class="flex-grow container mx-auto px-4 sm:px-6 lg:px-8 py-8">
+  <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 mb-8">
+              <div class="flex-1">
+                <h1 class="text-3xl font-bold">Applicant</h1>
+                <p class="text-neutral-500 dark:text-neutral-400 mt-1">Manage your Applicants and details.</p>
+              </div>
+              <a href="add_applicant.html">
+                <button
+                  class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center gap-2 overflow-hidden rounded h-10 px-4 bg-primary text-white text-sm font-bold">
+                  <span class="material-symbols-outlined"> add </span>
+                  <span class="truncate">Invite Applicant</span>
+                </button>
+              </a>
+            </div>
+
+  <div class="bg-background-light dark:bg-background-dark border border-subtle-light dark:border-subtle-dark rounded-lg overflow-hidden">
+    <div class="overflow-x-auto">
+      <table class="w-full">
+        <thead class="bg-subtle-light/30 dark:bg-subtle-dark/30">
+          <tr>
+            <th class="px-6 py-4 text-left text-xs font-semibold text-muted-light dark:text-muted-dark uppercase tracking-wider" style="width: 20%;">Name</th>
+            <th class="px-6 py-4 text-left text-xs font-semibold text-muted-light dark:text-muted-dark uppercase tracking-wider" style="width: 20%;">Phone Number</th>
+            
+            <th class="px-6 py-4 text-left text-xs font-semibold text-muted-light dark:text-muted-dark uppercase tracking-wider" style="width: 25%;">Cars</th>
+            <th class="px-6 py-4 text-left text-xs font-semibold text-muted-light dark:text-muted-dark uppercase tracking-wider" style="width: 25%;">Applicant-Type</th>
+            <th class="px-6 py-4 text-left text-xs font-semibold text-muted-light dark:text-muted-dark uppercase tracking-wider" style="width: 15%;">No of Application</th>
+          </tr>
+        </thead>
+
+        <tbody class="divide-y divide-subtle-light dark:divide-subtle-dark">
+          <tr>
+            <td class="px-6 py-4 text-sm font-medium text-text-light dark:text-text-dark cursor-pointer hover:text-primary" onclick="window.location.href='./leads_detail.html'">Ramesh R</td>
+            <td class="px-6 py-4 text-sm text-muted-light dark:text-muted-dark">+91 98765 43210</td>
+            
+            <td class="px-6 py-4 text-sm font-medium text-text-light dark:text-text-dark cursor-pointer hover:text-primary" onclick="window.location.href='./view-inventory.html'">2023 Maruti Swift</td>
+            <td class="px-6 py-4 text-sm text-muted-light dark:text-muted-dark">Salaried</td>
+            <td class="px-6 py-4 text-sm font-medium text-text-light dark:text-text-dark cursor-pointer hover:text-primary" onclick="window.location.href='./report/report.html'">1</td>
+          </tr>
+
+          <tr>
+            <td class="px-6 py-4 text-sm font-medium text-text-light dark:text-text-dark cursor-pointer hover:text-primary" onclick="window.location.href='./leads_detail.html'">Ananya Mehta</td>
+            <td class="px-6 py-4 text-sm text-muted-light dark:text-muted-dark">+91 98123 45678</td>
+            <td class="px-6 py-4 text-sm font-medium text-text-light dark:text-text-dark cursor-pointer hover:text-primary" onclick="window.location.href='./view-inventory.html'">2022 Hyundai Creta</td>
+            <td class="px-6 py-4 text-sm text-muted-light dark:text-muted-dark">Salaried</td>
+            <td class="px-6 py-4 text-sm font-medium text-text-light dark:text-text-dark cursor-pointer hover:text-primary" onclick="window.location.href='./report/report.html'">4</td>
+          </tr>
+
+          <tr>
+            <td class="px-6 py-4 text-sm font-medium text-text-light dark:text-text-dark cursor-pointer hover:text-primary" onclick="window.location.href='./leads_detail.html'">Vikram Singh</td>
+            <td class="px-6 py-4 text-sm text-muted-light dark:text-muted-dark">+91 91234 56789</td>
+            <td class="px-6 py-4 text-sm font-medium text-text-light dark:text-text-dark cursor-pointer hover:text-primary" onclick="window.location.href='./view-inventory.html'">2024 Tata Nexon</td>
+            <td class="px-6 py-4 text-sm text-muted-light dark:text-muted-dark">Non-Salaried</td>
+            <td class="px-6 py-4 text-sm font-medium text-text-light dark:text-text-dark cursor-pointer hover:text-primary" onclick="window.location.href='./report/report.html'">8</td>
+          </tr>
+
+          <tr>
+            <td class="px-6 py-4 text-sm font-medium text-text-light dark:text-text-dark cursor-pointer hover:text-primary" onclick="window.location.href='./leads_detail.html'">Sanya Kapoor</td>
+            <td class="px-6 py-4 text-sm text-muted-light dark:text-muted-dark">+91 90000 11223</td>
+             <td class="px-6 py-4 text-sm font-medium text-text-light dark:text-text-dark cursor-pointer hover:text-primary" onclick="window.location.href='./view-inventory.html'">2021 Honda City</td>
+            <td class="px-6 py-4 text-sm text-muted-light dark:text-muted-dark">Salaried</td>
+            <td class="px-6 py-4 text-sm font-medium text-text-light dark:text-text-dark cursor-pointer hover:text-primary" onclick="window.location.href='./report/report.html'">3</td>
+          </tr>
+
+          <tr>
+            <td class="px-6 py-4 text-sm font-medium text-text-light dark:text-text-dark cursor-pointer hover:text-primary" onclick="window.location.href='./leads_detail.html'">Aditya Verma</td>
+            <td class="px-6 py-4 text-sm text-muted-light dark:text-muted-dark">+91 97890 12345</td>
+            <td class="px-6 py-4 text-sm font-medium text-text-light dark:text-text-dark cursor-pointer hover:text-primary" onclick="window.location.href='./view-inventory.html'">2023 Kia Seltos</td>
+            <td class="px-6 py-4 text-sm text-muted-light dark:text-muted-dark">Non-Salaried</td>
+            <td class="px-6 py-4 text-sm font-medium text-text-light dark:text-text-dark cursor-pointer hover:text-primary" onclick="window.location.href='./report/report.html'">9</td>
+          </tr>
+
+          <tr>
+            <td class="px-6 py-4 text-sm font-medium text-text-light dark:text-text-dark cursor-pointer hover:text-primary" onclick="window.location.href='./leads_detail.html'">Emma Reddy</td>
+            <td class="px-6 py-4 text-sm text-muted-light dark:text-muted-dark">+91 95555 66778</td>
+            <td class="px-6 py-4 text-sm font-medium text-text-light dark:text-text-dark cursor-pointer hover:text-primary" onclick="window.location.href='./view-inventory.html'">2020 Hyundai Venue</td>
+            <td class="px-6 py-4 text-sm text-muted-light dark:text-muted-dark">Salaried</td>
+            <td class="px-6 py-4 text-sm font-medium text-text-light dark:text-text-dark cursor-pointer hover:text-primary" onclick="window.location.href='./report/report.html'">5</td>
+          </tr>
+
+          <tr>
+            <td class="px-6 py-4 text-sm font-medium text-text-light dark:text-text-dark cursor-pointer hover:text-primary" onclick="window.location.href='./leads_detail.html'">Riya Sharma</td>
+            <td class="px-6 py-4 text-sm text-muted-light dark:text-muted-dark">+91 99999 22334</td>
+             <td class="px-6 py-4 text-sm font-medium text-text-light dark:text-text-dark cursor-pointer hover:text-primary" onclick="window.location.href='./view-inventory.html'">2022 Mahindra XUV700</td>
+           <td class="px-6 py-4 text-sm text-muted-light dark:text-muted-dark">Non-Salaried</td>
+            <td class="px-6 py-4 text-sm font-medium text-text-light dark:text-text-dark cursor-pointer hover:text-primary" onclick="window.location.href='./report/report.html'">7</td>
+          </tr>
+
+          <tr>
+            <td class="px-6 py-4 text-sm font-medium text-text-light dark:text-text-dark cursor-pointer hover:text-primary" onclick="window.location.href='./leads_detail.html'">Arjun Patel</td>
+            <td class="px-6 py-4 text-sm text-muted-light dark:text-muted-dark">+91 93333 44556</td>
+            <td class="px-6 py-4 text-sm font-medium text-text-light dark:text-text-dark cursor-pointer hover:text-primary" onclick="window.location.href='./view-inventory.html'">2024 Audi Q3</td>
+            <td class="px-6 py-4 text-sm text-muted-light dark:text-muted-dark">Non-Salaried</td>
+            <td class="px-6 py-4 text-sm font-medium text-text-light dark:text-text-dark cursor-pointer hover:text-primary" onclick="window.location.href='./report/report.html'">2</td>
+          </tr>
+
+          <tr>
+            <td class="px-6 py-4 text-sm font-medium text-text-light dark:text-text-dark cursor-pointer hover:text-primary" onclick="window.location.href='./leads_detail.html'">Ishita Jain</td>
+            <td class="px-6 py-4 text-sm text-muted-light dark:text-muted-dark">+91 96666 77889</td>
+            <td class="px-6 py-4 text-sm font-medium text-text-light dark:text-text-dark cursor-pointer hover:text-primary" onclick="window.location.href='./view-inventory.html'">2019 Tata Altroz</td>
+            <td class="px-6 py-4 text-sm text-muted-light dark:text-muted-dark">Salaried</td>
+            <td class="px-6 py-4 text-sm font-medium text-text-light dark:text-text-dark cursor-pointer hover:text-primary" onclick="window.location.href='./report/report.html'">1</td>
+          </tr>
+
+          <tr>
+            <td class="px-6 py-4 text-sm font-medium text-text-light dark:text-text-dark cursor-pointer hover:text-primary" onclick="window.location.href='./leads_detail.html'">Kabir Khan</td>
+            <td class="px-6 py-4 text-sm text-muted-light dark:text-muted-dark">+91 97777 88990</td>
+             <td class="px-6 py-4 text-sm font-medium text-text-light dark:text-text-dark cursor-pointer hover:text-primary" onclick="window.location.href='./view-inventory.html'">2021 Kia Seltos</td>
+            <td class="px-6 py-4 text-sm text-muted-light dark:text-muted-dark">Non-Salaried</td>
+            <td class="px-6 py-4 text-sm font-medium text-text-light dark:text-text-dark cursor-pointer hover:text-primary" onclick="window.location.href='./report/report.html'">10</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="flex justify-between items-center mt-6 p-4">
+      <span class="text-sm text-text-light/60 dark:text-text-dark/60">Showing 1 to 10 of 800 Applicants</span>
+      <div class="flex items-center gap-2">
+        <button class="px-3 py-1 border border-border-light dark:border-border-dark rounded-md text-sm hover:bg-primary/10">Previous</button>
+        <button class="px-3 py-1 border border-border-light dark:border-border-dark rounded-md text-sm hover:bg-primary/10">Next</button>
+      </div>
+    </div>
+  </div>
+</main>
+    </div>
+  </div>
+</body>
+
+</html>
