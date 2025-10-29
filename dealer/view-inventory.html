@@ -8,7 +8,7 @@
     href="https://fonts.googleapis.com/css2?display=swap&amp;family=Inter%3Awght%40400%3B500%3B700%3B900&amp;family=Noto+Sans%3Awght%40400%3B500%3B700%3B900"
     onload="this.rel='stylesheet'" rel="stylesheet" />
   <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
-  <title>Know My Tow - View Inventory</title>
+  <title>Know your Car - Car Details</title>
   <link rel="shortcut icon" href="../assets/favicon.png" type="image/x-icon">
   <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
   <script id="tailwind-config">
@@ -42,7 +42,7 @@
       <div class="p-4 flex justify-center">
         <a href="">
           <img class="w-40 h-auto" src="../assets/hyundai.png" 
-          alt="Know My Tow Logo">
+          alt="Know your Car Logo">
         </a>
       </div>
 
@@ -194,16 +194,16 @@
 
           <div class="mt-6 border-t border-subtle-light dark:border-subtle-dark pt-6 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 text-center ml-32">
           <div>
-            <p class="text-xs text-muted-light dark:text-muted-dark uppercase tracking-wider font-semibold">Applicants</p>
-            <p class="text-2xl font-bold mt-1" onclick="window.location.href='./dealerslist.html'">85</p>
+            <p class="text-xs text-muted-light dark:text-muted-dark uppercase tracking-wider font-semibold">Applicant</p>
+            <p class="text-2xl font-bold mt-1" onclick="window.location.href='./leads.html'">85</p>
           </div>
           <div>
-            <p class="text-xs text-muted-light dark:text-muted-dark uppercase tracking-wider font-semibold">Cars</p>
-            <p class="text-2xl font-bold mt-1" onclick="window.location.href='./caravan.html'">40</p>
+            <p class="text-xs text-muted-light dark:text-muted-dark uppercase tracking-wider font-semibold">Car</p>
+            <p class="text-2xl font-bold mt-1" onclick="window.location.href='./inventory.html'">40</p>
           </div>
           <div>
-            <p class="text-xs text-muted-light dark:text-muted-dark uppercase tracking-wider font-semibold">Applications</p>
-            <p class="text-2xl font-bold mt-1" onclick="window.location.href='./reports.html'">15</p>
+            <p class="text-xs text-muted-light dark:text-muted-dark uppercase tracking-wider font-semibold">Application</p>
+            <p class="text-2xl font-bold mt-1" onclick="window.location.href='./report/report.html'">15</p>
           </div>
 
         </div>
@@ -250,11 +250,47 @@
       <p class="text-sm text-text-light/60 dark:text-text-dark/60 uppercase tracking-wide font-semibold">Total Cost</p>
       <p class="text-3xl font-extrabold text-primary mt-1">₹6,72,307.00</p>
     </div>
-    <div class="col-span-2 text-center mt-2">
-      <p class="text-sm text-text-light/60 dark:text-text-dark/60">Approved Amount for Accessories</p>
-    </div>
+
   </div>
 </div>
+
+ <!-- Balloon Payment Section -->
+            <div class="bg-surface-light dark:bg-surface-dark p-6 rounded-xl border border-border-light dark:border-border-dark">
+              <h3 class="text-2xl font-bold text-text-light dark:text-text-dark mb-6">Balloon Payment Plan</h3>
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                <div>
+                  <p class="text-sm text-text-light/60 dark:text-text-dark/60">Loan Amount</p>
+                  <p class="text-lg font-semibold">₹6,00,000</p>
+                </div>
+                <div>
+                  <p class="text-sm text-text-light/60 dark:text-text-dark/60">Loan Tenure</p>
+                  <p class="text-lg font-semibold">5 Years (60 Months)</p>
+                </div>
+                <div>
+                  <p class="text-sm text-text-light/60 dark:text-text-dark/60">Interest Rate</p>
+                  <p class="text-lg font-semibold">9.5% p.a.</p>
+                </div>
+                <div>
+                  <p class="text-sm text-text-light/60 dark:text-text-dark/60">Balloon Percentage</p>
+                  <p class="text-lg font-semibold">20%</p>
+                </div>
+                <div>
+                  <p class="text-sm text-text-light/60 dark:text-text-dark/60">Monthly EMI</p>
+                  <p class="text-lg font-semibold">₹9,800</p>
+                </div>
+                <div>
+                  <p class="text-sm text-text-light/60 dark:text-text-dark/60">Final Balloon Payment</p>
+                  <p class="text-lg font-semibold text-primary">₹1,20,000</p>
+                </div>
+              </div>
+              <div class="mt-6 bg-primary/10 dark:bg-primary/20 p-4 rounded-lg text-sm leading-relaxed">
+                <p class="font-semibold text-primary">Note:</p>
+                <p class="text-text-light/70 dark:text-text-dark/70">
+                  This plan allows lower monthly EMIs throughout the tenure, with a larger final payment (the “balloon”) at the end.
+                  Suitable for buyers planning to upgrade or refinance later.
+                </p>
+              </div>
+            </div>
 
       </div>
 
@@ -324,10 +360,7 @@
                   <line x1="5" x2="19" y1="12" y2="12"></line>
                 </svg>
               </div>
-              <div>
-                <p class="font-medium">New car added to inventory</p>
-                <p class="text-sm text-text-light/60 dark:text-text-dark/60">4 days ago</p>
-              </div>
+             
             </li>
           </ul>
         </div>
